@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" shape-rendering="crispEdges" role="img" aria-label="toxic green venom cloud">
+  <rect width="64" height="64" fill="#0e7490"/>
+  <rect x="7" y="25" width="21" height="21" fill="#14532d"/>
+  <rect x="20" y="13" width="28" height="34" fill="#14532d"/>
+  <rect x="42" y="22" width="17" height="23" fill="#14532d"/>
+  <rect x="14" y="30" width="15" height="11" fill="#22c55e"/>
+  <rect x="29" y="20" width="14" height="14" fill="#22c55e"/>
+  <rect x="44" y="29" width="11" height="10" fill="#22c55e"/>
+  <rect x="10" y="14" width="6" height="6" fill="#bef264"/>
+  <rect x="51" y="9" width="6" height="6" fill="#bef264"/>
+  <rect x="35" y="51" width="6" height="6" fill="#bef264"/>
+  <rect x="24" y="34" width="6" height="6" fill="#052e16"/>
+</svg>

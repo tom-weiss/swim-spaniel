@@ -1,4 +1,5 @@
-import { PixelRenderer, SpanielSmashGame } from "./game.js";
+/* global window, document, navigator, performance, requestAnimationFrame, URL, console */
+import { PixelRenderer, SwimSpanielGame } from "./game.js";
 
 const canvas = document.getElementById("game") as HTMLCanvasElement | null;
 if (!canvas) {
@@ -10,7 +11,7 @@ if (!ctx) {
   throw new Error("Canvas 2d context unavailable");
 }
 
-class SkiMusic {
+class OceanMusic {
   private audioCtx: AudioContext | null = null;
   private master: GainNode | null = null;
   private nextNoteTime = 0;
@@ -102,7 +103,7 @@ class SkiMusic {
   }
 
 
-  public howl(): void {
+  public rescueChime(): void {
     if (!window.AudioContext || this.muted) {
       return;
     }
@@ -124,12 +125,8 @@ class SkiMusic {
     }
 
     const at = this.audioCtx.currentTime + 0.005;
-    this.playHowl(240, 140, at, 0.24, 0.24);
-    this.playHowl(320, 190, at + 0.06, 0.18, 0.16);
-  }
-
-  public smash(): void {
-    this.howl();
+    this.playDiveTone(280, 420, at, 0.24, 0.24);
+    this.playDiveTone(360, 520, at + 0.06, 0.18, 0.16);
   }
 
   public bark(): void {
@@ -180,7 +177,7 @@ class SkiMusic {
     });
     for (let burst = 0; burst < 6; burst += 1) {
       const timer = window.setTimeout(() => {
-        this.howl();
+        this.rescueChime();
       }, 260 + burst * 190);
       this.celebrationTimers.push(timer);
     }
@@ -242,7 +239,7 @@ class SkiMusic {
     osc.stop(at + duration + 0.02);
   }
 
-  private playHowl(startFreq: number, endFreq: number, at: number, duration: number, peak: number): void {
+  private playDiveTone(startFreq: number, endFreq: number, at: number, duration: number, peak: number): void {
     if (!this.audioCtx || !this.master) {
       return;
     }
@@ -263,7 +260,7 @@ class SkiMusic {
   }
 }
 
-const GAME_VERSION = "v1.2.5";
+const GAME_VERSION = "v2.0.1";
 
 function registerServiceWorker(): void {
   if (!("serviceWorker" in navigator)) {
@@ -271,7 +268,8 @@ function registerServiceWorker(): void {
   }
 
   window.addEventListener("load", () => {
-    void navigator.serviceWorker.register("/sw.js").catch((error: unknown) => {
+    const workerUrl = new URL("sw.js", document.baseURI);
+    void navigator.serviceWorker.register(workerUrl, { scope: "./" }).catch((error: unknown) => {
       console.error("Service worker registration failed", error);
     });
   });
@@ -279,27 +277,27 @@ function registerServiceWorker(): void {
 
 registerServiceWorker();
 
-const game = new SpanielSmashGame(canvas.width, canvas.height);
+const game = new SwimSpanielGame(canvas.width, canvas.height);
 const renderer = new PixelRenderer(ctx, canvas.width, canvas.height);
-const music = new SkiMusic();
+const music = new OceanMusic();
 const input = { left: false, right: false, jump: false };
 const splashScreen = document.getElementById("splash-screen");
 const splashTitle = document.getElementById("splash-title");
 const splashCopy = document.getElementById("splash-copy");
 const splashButton = document.getElementById("splash-start");
 const statusScore = document.getElementById("status-score");
-const statusLives = document.getElementById("status-lives");
+const statusAir = document.getElementById("status-air");
 const statusLevel = document.getElementById("status-level");
 const muteToggle = document.getElementById("splash-mute-toggle") as HTMLInputElement | null;
 
 
 let isPlaying = false;
 let gameOverHandled = false;
-let lastSpanielSmashCount = 0;
+let lastSpanielRescueCount = 0;
 let runStartMs = 0;
-let usedSkiSchoolDebugSpawn = false;
+let usedFishSchoolDebugSpawn = false;
 
-const STORAGE_MUTE_KEY = "spaniel-smash-muted";
+const STORAGE_MUTE_KEY = "swim-spaniel-muted";
 const initialMuted = window.localStorage.getItem(STORAGE_MUTE_KEY) === "true";
 music.setMuted(initialMuted);
 if (muteToggle) {
@@ -318,14 +316,14 @@ function showSplash(mode: "start" | "game-over", finalScore = 0): void {
 
   splashScreen.classList.remove("hidden");
   if (mode === "start") {
-    splashTitle.textContent = `SPANIEL SMASH ${GAME_VERSION}`;
-    splashCopy.textContent = "Evil Andy has released the spaniel army to take over the ski slopes. Smash the spaniels to clear the slopes. Arrow keys or tap controls move left/right. Smash spaniels to score, then defeat Andy when the boss phase starts.";
+    splashTitle.textContent = `SWIM, SPANIEL! ${GAME_VERSION}`;
+    splashCopy.textContent = "Spaniels are stranded in the reefs around the Komodo Islands. Swim left and right, boost over hazards, and rescue them. Save enough to face the giant Komodo dragon.";
     splashButton.textContent = "START";
     return;
   }
 
   splashTitle.textContent = `GAME OVER ${GAME_VERSION}`;
-  splashCopy.textContent = `Final Score ${finalScore}. Grrr! Hit restart and smash them all again.`;
+  splashCopy.textContent = `Final Score ${finalScore}. Your air tanks ran dry. Dive in and rescue them again!`;
   splashButton.textContent = "RESTART";
 }
 
@@ -339,10 +337,10 @@ window.addEventListener("keydown", (event) => {
   }
 
   if ((event.key === "p" || event.key === "P")
-    && !usedSkiSchoolDebugSpawn
+    && !usedFishSchoolDebugSpawn
     && performance.now() - runStartMs <= 1000) {
-    game.spawnSkiSchoolDebug(4);
-    usedSkiSchoolDebugSpawn = true;
+    game.spawnFishSchoolDebug(4);
+    usedFishSchoolDebugSpawn = true;
     return;
   }
 
@@ -455,13 +453,13 @@ splashButton?.addEventListener("click", () => {
   }
 
   gameOverHandled = false;
-  lastSpanielSmashCount = 0;
+  lastSpanielRescueCount = 0;
   input.left = false;
   input.right = false;
   input.jump = false;
   isPlaying = true;
   runStartMs = performance.now();
-  usedSkiSchoolDebugSpawn = false;
+  usedFishSchoolDebugSpawn = false;
   music.start();
   hideSplash();
 });
@@ -485,8 +483,8 @@ function frame(now: number): void {
   if (statusScore) {
     statusScore.textContent = `Score ${snapshot.score}`;
   }
-  if (statusLives) {
-    statusLives.textContent = `Lives ${snapshot.lives}`;
+  if (statusAir) {
+    statusAir.textContent = `Air ${snapshot.airTanks}`;
   }
   if (statusLevel) {
     statusLevel.textContent = `Level ${snapshot.speedLevel}`;
@@ -501,9 +499,9 @@ function frame(now: number): void {
     jumpControl.toggleAttribute("hidden", !isPlaying || snapshot.isGameOver);
   }
 
-  if (snapshot.spanielsSmashed > lastSpanielSmashCount) {
-    lastSpanielSmashCount = snapshot.spanielsSmashed;
-    music.howl();
+  if (snapshot.spanielsRescued > lastSpanielRescueCount) {
+    lastSpanielRescueCount = snapshot.spanielsRescued;
+    music.rescueChime();
   }
 
   if (snapshot.isVictory && !gameOverHandled) {
@@ -514,7 +512,7 @@ function frame(now: number): void {
     if (splashScreen && splashTitle && splashCopy && splashButton) {
       splashScreen.classList.remove("hidden");
       splashTitle.textContent = "CONGRATULATIONS";
-      splashCopy.textContent = "You beat Evil Andy. The slopes are clear!";
+      splashCopy.textContent = "You drove away the giant Komodo dragon. Every spaniel is safe!";
       splashButton.textContent = "PLAY AGAIN";
     }
   }

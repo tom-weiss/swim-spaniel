@@ -1,55 +1,55 @@
 const STANDARD_OBSTACLES = [
-    { type: "spaniel", obstacleId: "bouncing-ball", jumpRule: "low", widthScale: 0.45, height: 18, speed: 1.7, moving: true, minLevel: 1, weight: 1.4 },
-    { type: "spaniel", obstacleId: "squirrel-zigzag", jumpRule: "none", widthScale: 0.5, height: 22, speed: 1.8, moving: true, minLevel: 1, weight: 1.35 },
-    { type: "slalom-poles", obstacleId: "slalom-poles", jumpRule: "low", widthScale: 0.48, height: 28, speed: 2.2, moving: false, minLevel: 1, weight: 1.8 },
-    { type: "tree", obstacleId: "cracked-sidewalk-slab", jumpRule: "low", widthScale: 0.5, height: 24, speed: 2.2, moving: false, minLevel: 1, weight: 0.9 },
-    { type: "rock", obstacleId: "trash-bag-cluster", jumpRule: "low", widthScale: 0.55, height: 22, speed: 2.2, moving: false, minLevel: 1, weight: 0.85 },
-    { type: "tree", obstacleId: "construction-cone-pair", jumpRule: "low", widthScale: 0.52, height: 24, speed: 2.2, moving: false, minLevel: 1, weight: 0.75 },
-    { type: "ice-patch", obstacleId: "ice-patch", jumpRule: "none", widthScale: 0.58, height: 20, speed: 2.2, moving: false, minLevel: 2, weight: 0.8 },
-    { type: "skier", obstacleId: "rolling-skateboard", jumpRule: "low", widthScale: 0.56, height: 28, speed: 1.6, moving: true, minLevel: 2, weight: 0.7 },
-    { type: "tree", obstacleId: "mail-crate-stack", jumpRule: "high", widthScale: 0.58, height: 32, speed: 2.2, moving: false, minLevel: 3, weight: 0.6 },
-    { type: "skier", obstacleId: "jogger-crossing", jumpRule: "none", widthScale: 0.56, height: 30, speed: 1.4, moving: true, minLevel: 3, weight: 0.55 }
+    { type: "spaniel", obstacleId: "floating-life-ring", jumpRule: "low", widthScale: 0.45, height: 18, speed: 1.7, moving: true, minLevel: 1, weight: 1.4 },
+    { type: "spaniel", obstacleId: "drifting-rescue-rope", jumpRule: "none", widthScale: 0.5, height: 22, speed: 1.8, moving: true, minLevel: 1, weight: 1.35 },
+    { type: "kelp-bed", obstacleId: "kelp-bed", jumpRule: "low", widthScale: 0.48, height: 28, speed: 2.2, moving: false, minLevel: 1, weight: 1.8 },
+    { type: "coral", obstacleId: "staghorn-coral", jumpRule: "low", widthScale: 0.5, height: 24, speed: 2.2, moving: false, minLevel: 1, weight: 0.9 },
+    { type: "reef-rock", obstacleId: "volcanic-rock-cluster", jumpRule: "low", widthScale: 0.55, height: 22, speed: 2.2, moving: false, minLevel: 1, weight: 0.85 },
+    { type: "coral", obstacleId: "fire-coral-pair", jumpRule: "low", widthScale: 0.52, height: 24, speed: 2.2, moving: false, minLevel: 1, weight: 0.75 },
+    { type: "current-stream", obstacleId: "current-stream", jumpRule: "none", widthScale: 0.58, height: 20, speed: 2.2, moving: false, minLevel: 2, weight: 0.8 },
+    { type: "shark", obstacleId: "reef-shark", jumpRule: "low", widthScale: 0.56, height: 28, speed: 1.6, moving: true, minLevel: 2, weight: 0.7 },
+    { type: "coral", obstacleId: "coral-pinnacle", jumpRule: "high", widthScale: 0.58, height: 32, speed: 2.2, moving: false, minLevel: 3, weight: 0.6 },
+    { type: "shark", obstacleId: "barracuda-crossing", jumpRule: "none", widthScale: 0.56, height: 30, speed: 1.4, moving: true, minLevel: 3, weight: 0.55 }
 ];
 const RARE_OBSTACLES = [
-    { type: "tree", obstacleId: "fence-segment", jumpRule: "high", widthScale: 0.62, height: 36, speed: 2.3, moving: false, minLevel: 1, weight: 0.95 },
-    { type: "rock", obstacleId: "open-manhole", jumpRule: "high", widthScale: 0.6, height: 28, speed: 2.3, moving: false, minLevel: 1, weight: 0.9 },
-    { type: "spaniel", obstacleId: "leashed-dog-lunge", jumpRule: "none", widthScale: 0.52, height: 22, speed: 1.7, moving: true, minLevel: 2, weight: 0.8 },
+    { type: "coral", obstacleId: "coral-wall", jumpRule: "high", widthScale: 0.62, height: 36, speed: 2.3, moving: false, minLevel: 1, weight: 0.95 },
+    { type: "reef-rock", obstacleId: "blue-hole", jumpRule: "high", widthScale: 0.6, height: 28, speed: 2.3, moving: false, minLevel: 1, weight: 0.9 },
+    { type: "spaniel", obstacleId: "tangled-spaniel", jumpRule: "none", widthScale: 0.52, height: 22, speed: 1.7, moving: true, minLevel: 2, weight: 0.8 },
     { type: "black-spaniel", obstacleId: "black-spaniel", jumpRule: "none", widthScale: 0.52, height: 22, speed: 1.75, moving: true, minLevel: 2, weight: 0.36 },
-    { type: "ski-school-instructor", obstacleId: "ski-school-snake", jumpRule: "low", widthScale: 0.56, height: 30, speed: 1.5, moving: true, minLevel: 3, weight: 0.42 },
-    { type: "ice-crevasse", obstacleId: "ice-crevasse", jumpRule: "high", widthScale: 1.55, height: 24, speed: 2.25, moving: false, minLevel: 2, weight: 0.42 },
-    { type: "puddle-patch", obstacleId: "puddle-patch", jumpRule: "none", widthScale: 0.52, height: 20, speed: 2.2, moving: false, minLevel: 2, weight: 0.72 },
-    { type: "rock", obstacleId: "glass-debris-field", jumpRule: "low", widthScale: 0.58, height: 22, speed: 2.3, moving: false, minLevel: 2, weight: 0.78 },
-    { type: "skier", obstacleId: "fallen-signboard", jumpRule: "high", widthScale: 0.62, height: 30, speed: 1.5, moving: true, minLevel: 3, weight: 0.64 },
-    { type: "drone-package-drop", obstacleId: "drone-package-drop", jumpRule: "low", widthScale: 0.54, height: 24, speed: 2.1, moving: false, minLevel: 3, weight: 0.5 },
-    { type: "skier", obstacleId: "scooter-rider", jumpRule: "none", widthScale: 0.58, height: 32, speed: 2.0, moving: true, minLevel: 3, weight: 0.54 }
+    { type: "fish-school-leader", obstacleId: "fish-school", jumpRule: "low", widthScale: 0.56, height: 30, speed: 1.5, moving: true, minLevel: 3, weight: 0.42 },
+    { type: "reef-trench", obstacleId: "reef-trench", jumpRule: "high", widthScale: 1.55, height: 24, speed: 2.25, moving: false, minLevel: 2, weight: 0.42 },
+    { type: "silt-patch", obstacleId: "silt-patch", jumpRule: "none", widthScale: 0.52, height: 20, speed: 2.2, moving: false, minLevel: 2, weight: 0.72 },
+    { type: "reef-rock", obstacleId: "shell-bed", jumpRule: "low", widthScale: 0.58, height: 22, speed: 2.3, moving: false, minLevel: 2, weight: 0.78 },
+    { type: "shark", obstacleId: "hammerhead-shark", jumpRule: "high", widthScale: 0.62, height: 30, speed: 1.5, moving: true, minLevel: 3, weight: 0.64 },
+    { type: "falling-anchor", obstacleId: "falling-anchor", jumpRule: "low", widthScale: 0.54, height: 24, speed: 2.1, moving: false, minLevel: 3, weight: 0.5 },
+    { type: "shark", obstacleId: "tiger-shark", jumpRule: "none", widthScale: 0.58, height: 32, speed: 2.0, moving: true, minLevel: 3, weight: 0.54 }
 ];
 const SUPER_RARE_OBSTACLES = [
-    { type: "tree", obstacleId: "collapsed-scaffolding", jumpRule: "high", widthScale: 0.75, height: 40, speed: 2.5, moving: false, minLevel: 2, weight: 0.9 },
-    { type: "rock", obstacleId: "roadwork-trench", jumpRule: "high", widthScale: 0.76, height: 40, speed: 2.45, moving: false, minLevel: 2, weight: 0.82 },
-    { type: "tree", obstacleId: "blocked-intersection", jumpRule: "none", widthScale: 0.8, height: 38, speed: 2.3, moving: false, minLevel: 3, weight: 0.7 },
-    { type: "rock", obstacleId: "statue-base-rubble", jumpRule: "high", widthScale: 0.72, height: 34, speed: 2.4, moving: false, minLevel: 3, weight: 0.66 },
-    { type: "helicopter-downdraft", obstacleId: "helicopter-downdraft", jumpRule: "none", widthScale: 0.66, height: 32, speed: 1.8, moving: true, minLevel: 3, weight: 0.58 },
-    { type: "naked-skier", obstacleId: "naked-skier", jumpRule: "low", widthScale: 0.58, height: 30, speed: 1.95, moving: true, minLevel: 4, weight: 0.16 }
+    { type: "coral", obstacleId: "giant-table-coral", jumpRule: "high", widthScale: 0.75, height: 40, speed: 2.5, moving: false, minLevel: 2, weight: 0.9 },
+    { type: "reef-rock", obstacleId: "lava-trench", jumpRule: "high", widthScale: 0.76, height: 40, speed: 2.45, moving: false, minLevel: 2, weight: 0.82 },
+    { type: "coral", obstacleId: "reef-gate", jumpRule: "none", widthScale: 0.8, height: 38, speed: 2.3, moving: false, minLevel: 3, weight: 0.7 },
+    { type: "reef-rock", obstacleId: "ancient-anchor-field", jumpRule: "high", widthScale: 0.72, height: 34, speed: 2.4, moving: false, minLevel: 3, weight: 0.66 },
+    { type: "manta-current", obstacleId: "manta-current", jumpRule: "none", widthScale: 0.66, height: 32, speed: 1.8, moving: true, minLevel: 3, weight: 0.58 },
+    { type: "jellyfish", obstacleId: "jellyfish", jumpRule: "low", widthScale: 0.58, height: 30, speed: 1.95, moving: true, minLevel: 4, weight: 0.16 }
 ];
 const MYTHIC_OBSTACLES = [
-    { type: "skier", obstacleId: "mirror-maze-gate", jumpRule: "none", widthScale: 0.66, height: 32, speed: 1.7, moving: true },
-    { type: "spaniel", obstacleId: "frozen-street-tile-set", jumpRule: "low", widthScale: 0.6, height: 20, speed: 1.6, moving: true },
-    { type: "tree", obstacleId: "ancient-bell-tower-debris", jumpRule: "high", widthScale: 0.7, height: 36, speed: 2.4, moving: false },
-    { type: "rock", obstacleId: "meteor-shard-rain", jumpRule: "high", widthScale: 0.66, height: 30, speed: 2.4, moving: false }
+    { type: "shark", obstacleId: "ghost-shark", jumpRule: "none", widthScale: 0.66, height: 32, speed: 1.7, moving: true },
+    { type: "spaniel", obstacleId: "golden-harness-spaniel", jumpRule: "low", widthScale: 0.6, height: 20, speed: 1.6, moving: true },
+    { type: "coral", obstacleId: "shipwreck-mast", jumpRule: "high", widthScale: 0.7, height: 36, speed: 2.4, moving: false },
+    { type: "reef-rock", obstacleId: "volcanic-vent", jumpRule: "high", widthScale: 0.66, height: 30, speed: 2.4, moving: false }
 ];
-export class SpanielSmashGame {
+export class SwimSpanielGame {
     width;
     height;
     laneCount;
     laneWidth;
     playerLane;
-    lives = 3;
+    airTanks = 3;
     score = 0;
     speedLevel = 1;
-    spanielsSmashed = 0;
-    levelSpanielsSmashed = 0;
+    spanielsRescued = 0;
+    levelSpanielsRescued = 0;
     gameOver = false;
-    andyBossActive = false;
+    komodoBossActive = false;
     victory = false;
     entities = [];
     effects = [];
@@ -67,32 +67,32 @@ export class SpanielSmashGame {
     crashFreezeMs = 0;
     sideObstacleOffsetY = 0;
     mythicUnlocked = false;
-    puddleSlowMs = 0;
-    wetPaintSlipMs = 0;
+    siltSlowMs = 0;
+    currentBoostMs = 0;
     playerImmortalMs = 0;
     levelUpBannerMs = 0;
     levelTransitionBoostMs = 0;
-    nextBossSpanielGoal = 12;
+    nextBossRescueGoal = 12;
     nextEntityId = 1;
     touchingSurfaceEntityIds = new Set();
     static staticObstacleSpeed = 2.2;
     static movingEntityBaseSpeed = 1.2;
     static jumpDurationMs = 520;
-    static puddleSlowDurationMs = 900;
-    static icePatchBoostDurationMs = 1400;
-    static droneTelegraphDurationMs = 650;
-    static downdraftPushIntervalMs = 180;
-    static andyBossEnterY = 58;
-    static andyBossHoverDurationMs = 20000;
-    static andyBossEnterSpeed = 2.05;
-    static andyBossExitSpeed = 1.95;
-    static andyBossLaneMoveMs = 240;
-    static andyBossThrowMinMs = 820;
-    static andyBossThrowMaxMs = 1500;
-    static andyBossThrowMinFloorMs = 260;
-    static andyBossThrowRangeFloorMs = 180;
-    static andyThrowLevelReductionMs = 60;
-    static andyBossBonusScore = 1800;
+    static siltSlowDurationMs = 900;
+    static currentStreamBoostDurationMs = 1400;
+    static anchorTelegraphDurationMs = 650;
+    static mantaCurrentPushIntervalMs = 180;
+    static komodoBossEnterY = 58;
+    static komodoBossHoverDurationMs = 20000;
+    static komodoBossEnterSpeed = 2.05;
+    static komodoBossExitSpeed = 1.95;
+    static komodoBossLaneMoveMs = 240;
+    static komodoBossThrowMinMs = 820;
+    static komodoBossThrowMaxMs = 1500;
+    static komodoBossThrowMinFloorMs = 260;
+    static komodoBossThrowRangeFloorMs = 180;
+    static komodoThrowLevelReductionMs = 60;
+    static komodoBossBonusScore = 1800;
     static entityCullMarginPx = 40;
     static levelStartImmortalMs = 2600;
     static respawnImmortalMs = 2200;
@@ -108,32 +108,32 @@ export class SpanielSmashGame {
     static levelTransitionScrollMultiplier = 1.2;
     // Speed/spawn tuning caps at level 6; campaign progression continues to victoryLevel.
     static maxSpeedLevel = 6;
-    static pooBagSpeed = 2.8;
-    static pooBagWidthScale = 0.34;
-    static pooBagHeight = 16;
-    static maxPuddleStackMs = 5400;
-    static maxIceStackMs = 5600;
+    static venomCloudSpeed = 2.8;
+    static venomCloudWidthScale = 0.34;
+    static venomCloudHeight = 16;
+    static maxSiltStackMs = 5400;
+    static maxCurrentStackMs = 5600;
     static maxEffectStacks = 4;
     static defaultLaneSwitchCooldownMs = 140;
     static defaultJumpCooldownMs = 560;
-    static puddleLaneSwitchCooldownMs = 280;
-    static puddleJumpCooldownMs = 920;
-    static iceLaneSwitchCooldownMs = 80;
-    static iceJumpCooldownMs = 360;
-    static puddleScrollSpeedMultiplier = 0.72;
-    static iceScrollSpeedMultiplier = 1.35;
-    static skiSchoolObstacleId = "ski-school-snake";
-    static skiSchoolMinChildren = 3;
-    static skiSchoolBaseChildren = 3;
-    static skiSchoolMaxChildren = 16;
-    static skiSchoolInstructorWidthScale = 0.56;
-    static skiSchoolChildWidthScale = 0.5;
-    static skiSchoolInstructorHeight = 30;
-    static skiSchoolChildHeight = 28;
-    static skiSchoolSegmentSpacingPx = 16;
-    static skiSchoolWavePeriodMs = 1080;
-    static skiSchoolWaveOffsetMs = 170;
-    static skiSchoolSpeedVariance = 0.16;
+    static siltLaneSwitchCooldownMs = 280;
+    static siltJumpCooldownMs = 920;
+    static currentLaneSwitchCooldownMs = 80;
+    static currentJumpCooldownMs = 360;
+    static siltScrollSpeedMultiplier = 0.72;
+    static currentScrollSpeedMultiplier = 1.35;
+    static fishSchoolObstacleId = "fish-school";
+    static fishSchoolMinChildren = 3;
+    static fishSchoolBaseChildren = 3;
+    static fishSchoolMaxChildren = 16;
+    static fishSchoolLeaderWidthScale = 0.56;
+    static fishSchoolFollowerWidthScale = 0.5;
+    static fishSchoolLeaderHeight = 30;
+    static fishSchoolFollowerHeight = 28;
+    static fishSchoolSegmentSpacingPx = 16;
+    static fishSchoolWavePeriodMs = 1080;
+    static fishSchoolWaveOffsetMs = 170;
+    static fishSchoolSpeedVariance = 0.16;
     static victoryLevel = 10;
     constructor(width, height, rng = Math.random, laneCount = 20) {
         this.width = width;
@@ -167,7 +167,7 @@ export class SpanielSmashGame {
             this.spawnEntity();
         }
         const speedMultiplier = this.currentLevelSpeedMultiplier() * this.currentScrollSpeedMultiplier();
-        this.sideObstacleOffsetY += SpanielSmashGame.staticObstacleSpeed * speedMultiplier * (deltaMs / 16.67);
+        this.sideObstacleOffsetY += SwimSpanielGame.staticObstacleSpeed * speedMultiplier * (deltaMs / 16.67);
         for (const entity of this.entities) {
             this.tickEntityBehaviorState(entity, deltaMs);
             this.maybeMoveEntityLane(entity, deltaMs);
@@ -176,12 +176,12 @@ export class SpanielSmashGame {
             entity.crashAnimationMs = Math.max(0, (entity.crashAnimationMs ?? 0) - deltaMs);
             this.maybeCompleteBossFromOffscreenExit(entity);
         }
-        this.applyDowndraftPushes();
+        this.applyMantaCurrentPushes();
         this.resolveEntityCollisions();
         this.resolveCollisions();
         this.maybeStartBossEncounter();
         this.handleBossExitState();
-        this.entities = this.entities.filter((entity) => entity.y < this.height + SpanielSmashGame.entityCullMarginPx && entity.y + entity.height > -SpanielSmashGame.entityCullMarginPx);
+        this.entities = this.entities.filter((entity) => entity.y < this.height + SwimSpanielGame.entityCullMarginPx && entity.y + entity.height > -SwimSpanielGame.entityCullMarginPx);
     }
     handleInput(input, deltaMs) {
         this.laneSwitchCooldownMs = Math.max(0, this.laneSwitchCooldownMs - deltaMs);
@@ -189,7 +189,7 @@ export class SpanielSmashGame {
         this.jumpTimerMs = Math.max(0, this.jumpTimerMs - deltaMs);
         const controls = this.currentControlProfile();
         if (input.jump && this.jumpCooldownMs === 0) {
-            this.jumpTimerMs = SpanielSmashGame.jumpDurationMs;
+            this.jumpTimerMs = SwimSpanielGame.jumpDurationMs;
             this.jumpCooldownMs = controls.jumpCooldownMs;
         }
         if (this.laneSwitchCooldownMs > 0) {
@@ -206,36 +206,36 @@ export class SpanielSmashGame {
         }
     }
     currentControlProfile() {
-        const puddleStacks = this.effectStacks(this.puddleSlowMs, SpanielSmashGame.puddleSlowDurationMs);
-        const iceStacks = this.effectStacks(this.wetPaintSlipMs, SpanielSmashGame.icePatchBoostDurationMs);
-        const laneCooldown = SpanielSmashGame.defaultLaneSwitchCooldownMs
-            + puddleStacks * (SpanielSmashGame.puddleLaneSwitchCooldownMs - SpanielSmashGame.defaultLaneSwitchCooldownMs)
-            - iceStacks * (SpanielSmashGame.defaultLaneSwitchCooldownMs - SpanielSmashGame.iceLaneSwitchCooldownMs);
-        const jumpCooldown = SpanielSmashGame.defaultJumpCooldownMs
-            + puddleStacks * (SpanielSmashGame.puddleJumpCooldownMs - SpanielSmashGame.defaultJumpCooldownMs)
-            - iceStacks * (SpanielSmashGame.defaultJumpCooldownMs - SpanielSmashGame.iceJumpCooldownMs);
+        const siltStacks = this.effectStacks(this.siltSlowMs, SwimSpanielGame.siltSlowDurationMs);
+        const currentStacks = this.effectStacks(this.currentBoostMs, SwimSpanielGame.currentStreamBoostDurationMs);
+        const laneCooldown = SwimSpanielGame.defaultLaneSwitchCooldownMs
+            + siltStacks * (SwimSpanielGame.siltLaneSwitchCooldownMs - SwimSpanielGame.defaultLaneSwitchCooldownMs)
+            - currentStacks * (SwimSpanielGame.defaultLaneSwitchCooldownMs - SwimSpanielGame.currentLaneSwitchCooldownMs);
+        const jumpCooldown = SwimSpanielGame.defaultJumpCooldownMs
+            + siltStacks * (SwimSpanielGame.siltJumpCooldownMs - SwimSpanielGame.defaultJumpCooldownMs)
+            - currentStacks * (SwimSpanielGame.defaultJumpCooldownMs - SwimSpanielGame.currentJumpCooldownMs);
         return {
             laneSwitchCooldownMs: Math.max(40, Math.min(520, Math.round(laneCooldown))),
             jumpCooldownMs: Math.max(180, Math.min(1600, Math.round(jumpCooldown)))
         };
     }
     currentScrollSpeedMultiplier() {
-        const puddleStacks = this.effectStacks(this.puddleSlowMs, SpanielSmashGame.puddleSlowDurationMs);
-        const iceStacks = this.effectStacks(this.wetPaintSlipMs, SpanielSmashGame.icePatchBoostDurationMs);
-        const levelTransition = this.levelTransitionBoostMs > 0 ? SpanielSmashGame.levelTransitionScrollMultiplier : 1;
-        const effectSpeed = Math.pow(SpanielSmashGame.puddleScrollSpeedMultiplier, puddleStacks)
-            * Math.pow(SpanielSmashGame.iceScrollSpeedMultiplier, iceStacks);
+        const siltStacks = this.effectStacks(this.siltSlowMs, SwimSpanielGame.siltSlowDurationMs);
+        const currentStacks = this.effectStacks(this.currentBoostMs, SwimSpanielGame.currentStreamBoostDurationMs);
+        const levelTransition = this.levelTransitionBoostMs > 0 ? SwimSpanielGame.levelTransitionScrollMultiplier : 1;
+        const effectSpeed = Math.pow(SwimSpanielGame.siltScrollSpeedMultiplier, siltStacks)
+            * Math.pow(SwimSpanielGame.currentScrollSpeedMultiplier, currentStacks);
         return Math.max(0.35, Math.min(2.5, levelTransition * effectSpeed));
     }
     currentLevelSpeedMultiplier() {
-        const effectiveLevel = Math.min(this.speedLevel, SpanielSmashGame.maxSpeedLevel);
-        return 1 + (effectiveLevel - 1) * SpanielSmashGame.levelSpeedStepMultiplier;
+        const effectiveLevel = Math.min(this.speedLevel, SwimSpanielGame.maxSpeedLevel);
+        return 1 + (effectiveLevel - 1) * SwimSpanielGame.levelSpeedStepMultiplier;
     }
     currentSpawnIntervalMs() {
-        const effectiveLevel = Math.min(this.speedLevel, SpanielSmashGame.maxSpeedLevel);
-        const baselineSpawnInterval = Math.max(SpanielSmashGame.minSpawnIntervalMs, SpanielSmashGame.levelOneBaseSpawnIntervalMs - (effectiveLevel - 1) * SpanielSmashGame.spawnIntervalLevelStepMs);
+        const effectiveLevel = Math.min(this.speedLevel, SwimSpanielGame.maxSpeedLevel);
+        const baselineSpawnInterval = Math.max(SwimSpanielGame.minSpawnIntervalMs, SwimSpanielGame.levelOneBaseSpawnIntervalMs - (effectiveLevel - 1) * SwimSpanielGame.spawnIntervalLevelStepMs);
         if (this.levelTransitionBoostMs > 0) {
-            return Math.max(SpanielSmashGame.levelTransitionSpawnFloorMs, Math.min(SpanielSmashGame.levelTransitionSpawnIntervalMs, baselineSpawnInterval - 80));
+            return Math.max(SwimSpanielGame.levelTransitionSpawnFloorMs, Math.min(SwimSpanielGame.levelTransitionSpawnIntervalMs, baselineSpawnInterval - 80));
         }
         return baselineSpawnInterval;
     }
@@ -243,7 +243,7 @@ export class SpanielSmashGame {
         if (ms <= 0) {
             return 0;
         }
-        return Math.min(SpanielSmashGame.maxEffectStacks, Math.ceil(ms / durationMs));
+        return Math.min(SwimSpanielGame.maxEffectStacks, Math.ceil(ms / durationMs));
     }
     spawnEntity() {
         const spawnLane = this.pickSpawnLane();
@@ -283,8 +283,8 @@ export class SpanielSmashGame {
     }
     spawnTieredObstacle(tier, spawnLane, spawnX, movingDirection, movingSpawnY) {
         const template = this.pickTemplateForTier(tier);
-        if (template.type === "ski-school-instructor") {
-            this.spawnSkiSchoolSnake(spawnLane, movingDirection, tier, this.skiSchoolChildrenForLevel());
+        if (template.type === "fish-school-leader") {
+            this.spawnFishSchool(spawnLane, movingDirection, tier, this.fishSchoolFollowersForLevel());
             return;
         }
         this.entities.push(this.makeEntityFromTemplate(template, tier, spawnLane, spawnX, movingDirection, movingSpawnY));
@@ -321,7 +321,7 @@ export class SpanielSmashGame {
             const spanielTemplates = templates.filter((template) => template.type === "spaniel" || template.type === "black-spaniel");
             const nonSpanielTemplates = templates.filter((template) => template.type !== "spaniel" && template.type !== "black-spaniel");
             if (spanielTemplates.length > 0 && nonSpanielTemplates.length > 0) {
-                if (roll < SpanielSmashGame.levelOneStandardSpanielChance) {
+                if (roll < SwimSpanielGame.levelOneStandardSpanielChance) {
                     return this.pickWeightedTemplate(spanielTemplates);
                 }
                 return this.pickWeightedTemplate(nonSpanielTemplates);
@@ -331,11 +331,11 @@ export class SpanielSmashGame {
     }
     makeEntityFromTemplate(template, tier, spawnLane, spawnX, movingDirection, movingSpawnY) {
         const behaviorState = this.createBehaviorState(template.type, movingDirection);
-        const isLanePatch = template.type === "puddle-patch" || template.type === "ice-patch";
-        const isDroneTelegraph = behaviorState?.kind === "droneDrop" && behaviorState.phase === "telegraph";
-        const isMoving = template.moving && !isLanePatch && !isDroneTelegraph;
+        const isLanePatch = template.type === "silt-patch" || template.type === "current-stream";
+        const isAnchorTelegraph = behaviorState?.kind === "anchorFall" && behaviorState.phase === "telegraph";
+        const isMoving = template.moving && !isLanePatch && !isAnchorTelegraph;
         const speedVariance = isMoving ? this.rng() * 0.35 : 0;
-        const staticSpawnY = template.type === "ice-crevasse" ? -30 : -24;
+        const staticSpawnY = template.type === "reef-trench" ? -30 : -24;
         return {
             id: this.nextEntityId++,
             type: template.type,
@@ -344,10 +344,10 @@ export class SpanielSmashGame {
             jumpRule: template.jumpRule,
             behaviorState,
             x: spawnX,
-            y: isDroneTelegraph ? this.playerY() + 8 : isMoving ? movingSpawnY : staticSpawnY,
+            y: isAnchorTelegraph ? this.playerY() + 8 : isMoving ? movingSpawnY : staticSpawnY,
             width: this.laneWidth * template.widthScale,
             height: template.height,
-            speed: isDroneTelegraph ? 0 : template.speed + speedVariance,
+            speed: isAnchorTelegraph ? 0 : template.speed + speedVariance,
             lane: spawnLane,
             laneSwitchCooldownMs: 0,
             direction: isMoving ? movingDirection : 1,
@@ -355,22 +355,22 @@ export class SpanielSmashGame {
         };
     }
     createBehaviorState(type, movingDirection) {
-        if (type === "drone-package-drop") {
-            return { kind: "droneDrop", phase: "telegraph", phaseMs: SpanielSmashGame.droneTelegraphDurationMs };
+        if (type === "falling-anchor") {
+            return { kind: "anchorFall", phase: "telegraph", phaseMs: SwimSpanielGame.anchorTelegraphDurationMs };
         }
-        if (type === "helicopter-downdraft") {
-            return { kind: "downdraft", pushDirection: movingDirection, pushCooldownMs: 0 };
+        if (type === "manta-current") {
+            return { kind: "mantaCurrent", pushDirection: movingDirection, pushCooldownMs: 0 };
         }
         return undefined;
     }
-    skiSchoolChildrenForLevel(level = this.speedLevel) {
-        const scaled = SpanielSmashGame.skiSchoolBaseChildren + Math.max(0, level - 3) * 2;
-        return Math.max(SpanielSmashGame.skiSchoolMinChildren, Math.min(SpanielSmashGame.skiSchoolMaxChildren, scaled));
+    fishSchoolFollowersForLevel(level = this.speedLevel) {
+        const scaled = SwimSpanielGame.fishSchoolBaseChildren + Math.max(0, level - 3) * 2;
+        return Math.max(SwimSpanielGame.fishSchoolMinChildren, Math.min(SwimSpanielGame.fishSchoolMaxChildren, scaled));
     }
-    skiSchoolLaneSpanForLevel(level = this.speedLevel) {
+    fishSchoolLaneSpanForLevel(level = this.speedLevel) {
         return level >= 7 ? 2 : 1;
     }
-    clampSkiSchoolAnchorLane(lane, laneSpan) {
+    clampFishSchoolAnchorLane(lane, laneSpan) {
         const minAnchor = this.minPlayableLane() + laneSpan;
         const maxAnchor = this.maxPlayableLane() - laneSpan;
         if (minAnchor > maxAnchor) {
@@ -378,46 +378,46 @@ export class SpanielSmashGame {
         }
         return Math.max(minAnchor, Math.min(maxAnchor, lane));
     }
-    computeSkiSchoolLane(anchorLane, laneSpan, phaseMs, wavePeriodMs) {
+    computeFishSchoolLane(anchorLane, laneSpan, phaseMs, wavePeriodMs) {
         const normalizedPhaseMs = ((phaseMs % wavePeriodMs) + wavePeriodMs) % wavePeriodMs;
         const theta = (normalizedPhaseMs / wavePeriodMs) * Math.PI * 2;
         const lane = Math.round(anchorLane + Math.sin(theta) * laneSpan);
         return Math.max(this.minPlayableLane(), Math.min(this.maxPlayableLane(), lane));
     }
-    spawnSkiSchoolSnake(spawnLane, movingDirection, tier, childrenCount, spawnYOverride) {
-        const laneSpan = this.skiSchoolLaneSpanForLevel();
-        const anchorLane = this.clampSkiSchoolAnchorLane(spawnLane, laneSpan);
-        const childTotal = Math.max(SpanielSmashGame.skiSchoolMinChildren, Math.min(SpanielSmashGame.skiSchoolMaxChildren, Math.floor(childrenCount)));
+    spawnFishSchool(spawnLane, movingDirection, tier, followerCount, spawnYOverride) {
+        const laneSpan = this.fishSchoolLaneSpanForLevel();
+        const anchorLane = this.clampFishSchoolAnchorLane(spawnLane, laneSpan);
+        const followerTotal = Math.max(SwimSpanielGame.fishSchoolMinChildren, Math.min(SwimSpanielGame.fishSchoolMaxChildren, Math.floor(followerCount)));
         const baseY = typeof spawnYOverride === "number"
             ? spawnYOverride
             : movingDirection === 1 ? -30 : this.height + 30;
-        const waveSeedMs = Math.floor(this.rng() * SpanielSmashGame.skiSchoolWavePeriodMs);
-        const baseSpeed = 1.36 + this.rng() * SpanielSmashGame.skiSchoolSpeedVariance;
-        const totalRiders = childTotal + 1;
-        for (let riderIndex = 0; riderIndex < totalRiders; riderIndex += 1) {
-            const isInstructor = riderIndex === 0;
-            const phaseOffsetMs = riderIndex * SpanielSmashGame.skiSchoolWaveOffsetMs;
-            const lane = this.computeSkiSchoolLane(anchorLane, laneSpan, waveSeedMs + phaseOffsetMs, SpanielSmashGame.skiSchoolWavePeriodMs);
-            const verticalOffset = riderIndex * SpanielSmashGame.skiSchoolSegmentSpacingPx;
+        const waveSeedMs = Math.floor(this.rng() * SwimSpanielGame.fishSchoolWavePeriodMs);
+        const baseSpeed = 1.36 + this.rng() * SwimSpanielGame.fishSchoolSpeedVariance;
+        const totalFish = followerTotal + 1;
+        for (let fishIndex = 0; fishIndex < totalFish; fishIndex += 1) {
+            const isLeader = fishIndex === 0;
+            const phaseOffsetMs = fishIndex * SwimSpanielGame.fishSchoolWaveOffsetMs;
+            const lane = this.computeFishSchoolLane(anchorLane, laneSpan, waveSeedMs + phaseOffsetMs, SwimSpanielGame.fishSchoolWavePeriodMs);
+            const verticalOffset = fishIndex * SwimSpanielGame.fishSchoolSegmentSpacingPx;
             this.entities.push({
                 id: this.nextEntityId++,
-                type: isInstructor ? "ski-school-instructor" : "ski-school-child",
-                obstacleId: SpanielSmashGame.skiSchoolObstacleId,
+                type: isLeader ? "fish-school-leader" : "fish-school-follower",
+                obstacleId: SwimSpanielGame.fishSchoolObstacleId,
                 obstacleTier: tier,
                 jumpRule: "low",
                 behaviorState: {
-                    kind: "skiSchoolSnake",
+                    kind: "fishSchool",
                     anchorLane,
                     laneSpan,
                     phaseMs: waveSeedMs,
                     phaseOffsetMs,
-                    wavePeriodMs: SpanielSmashGame.skiSchoolWavePeriodMs,
-                    paletteIndex: isInstructor ? 0 : riderIndex - 1
+                    wavePeriodMs: SwimSpanielGame.fishSchoolWavePeriodMs,
+                    paletteIndex: isLeader ? 0 : fishIndex - 1
                 },
                 x: this.laneX(lane),
                 y: baseY + verticalOffset,
-                width: this.laneWidth * (isInstructor ? SpanielSmashGame.skiSchoolInstructorWidthScale : SpanielSmashGame.skiSchoolChildWidthScale),
-                height: isInstructor ? SpanielSmashGame.skiSchoolInstructorHeight : SpanielSmashGame.skiSchoolChildHeight,
+                width: this.laneWidth * (isLeader ? SwimSpanielGame.fishSchoolLeaderWidthScale : SwimSpanielGame.fishSchoolFollowerWidthScale),
+                height: isLeader ? SwimSpanielGame.fishSchoolLeaderHeight : SwimSpanielGame.fishSchoolFollowerHeight,
                 speed: baseSpeed,
                 lane,
                 laneSwitchCooldownMs: 0,
@@ -426,78 +426,78 @@ export class SpanielSmashGame {
             });
         }
     }
-    spawnAndyBoss() {
+    spawnKomodoBoss() {
         const spawnLane = this.minPlayableLane() + Math.floor(this.rng() * (this.maxPlayableLane() - this.minPlayableLane() + 1));
         this.entities.push({
             id: this.nextEntityId++,
-            type: "andy",
-            obstacleId: "andy-boss",
+            type: "komodo",
+            obstacleId: "komodo-boss",
             obstacleTier: "super-rare",
             jumpRule: "high",
             behaviorState: {
-                kind: "andyBoss",
+                kind: "komodoBoss",
                 phase: "entering",
                 phaseMs: 0,
-                throwCooldownMs: this.rollAndyThrowCooldownMs()
+                throwCooldownMs: this.rollKomodoThrowCooldownMs()
             },
             x: this.laneX(spawnLane),
             y: -52,
             width: this.laneWidth * 0.8,
             height: 34,
-            speed: SpanielSmashGame.movingEntityBaseSpeed,
+            speed: SwimSpanielGame.movingEntityBaseSpeed,
             lane: spawnLane,
             laneSwitchCooldownMs: 0,
             direction: 1,
             crashAnimationMs: 0
         });
-        this.andyBossActive = true;
+        this.komodoBossActive = true;
     }
     maybeStartBossEncounter() {
-        if (this.andyBossActive) {
+        if (this.komodoBossActive) {
             return;
         }
-        if (this.levelSpanielsSmashed < this.nextBossSpanielGoal) {
+        if (this.levelSpanielsRescued < this.nextBossRescueGoal) {
             return;
         }
-        this.spawnAndyBoss();
+        this.spawnKomodoBoss();
     }
     handleBossExitState() {
-        if (this.andyBossActive) {
+        if (this.komodoBossActive) {
             return;
         }
-        if (this.entities.some((entity) => entity.type === "poo-bag" || (entity.type === "andy" && entity.behaviorState?.kind === "andyBoss"))) {
-            this.entities = this.entities.filter((entity) => entity.type !== "poo-bag" && !(entity.type === "andy" && entity.behaviorState?.kind === "andyBoss"));
+        if (this.entities.some((entity) => entity.type === "venom-cloud" || (entity.type === "komodo" && entity.behaviorState?.kind === "komodoBoss"))) {
+            this.entities = this.entities.filter((entity) => entity.type !== "venom-cloud" && !(entity.type === "komodo" && entity.behaviorState?.kind === "komodoBoss"));
         }
     }
     completeBossEncounter(defeated) {
-        if (!this.andyBossActive) {
+        if (!this.komodoBossActive) {
             return;
         }
-        this.andyBossActive = false;
+        this.komodoBossActive = false;
         if (defeated) {
-            this.score += SpanielSmashGame.andyBossBonusScore;
-            this.lives += 2;
+            this.score += SwimSpanielGame.komodoBossBonusScore;
+            this.airTanks += 2;
         }
-        if (this.speedLevel >= SpanielSmashGame.victoryLevel) {
+        if (this.speedLevel >= SwimSpanielGame.victoryLevel) {
             this.victory = true;
             this.gameOver = true;
             this.levelUpBannerMs = 0;
             this.levelTransitionBoostMs = 0;
             return;
         }
-        const canAdvanceLevel = this.speedLevel < SpanielSmashGame.victoryLevel;
+        const canAdvanceLevel = this.speedLevel < SwimSpanielGame.victoryLevel;
         if (canAdvanceLevel) {
             this.speedLevel += 1;
         }
         this.crashFreezeMs = 0;
-        this.levelSpanielsSmashed = 0;
-        this.nextBossSpanielGoal = this.bossSpanielGoalForLevel(this.speedLevel);
-        this.levelUpBannerMs = canAdvanceLevel ? SpanielSmashGame.levelUpBannerDurationMs : 0;
-        this.levelTransitionBoostMs = canAdvanceLevel ? SpanielSmashGame.levelTransitionBoostDurationMs : 0;
-        this.playerImmortalMs = Math.max(this.playerImmortalMs, SpanielSmashGame.levelStartImmortalMs);
+        this.levelSpanielsRescued = 0;
+        this.nextBossRescueGoal = this.bossRescueGoalForLevel(this.speedLevel);
+        this.levelUpBannerMs = canAdvanceLevel ? SwimSpanielGame.levelUpBannerDurationMs : 0;
+        this.levelTransitionBoostMs = canAdvanceLevel ? SwimSpanielGame.levelTransitionBoostDurationMs : 0;
+        this.playerImmortalMs = Math.max(this.playerImmortalMs, SwimSpanielGame.levelStartImmortalMs);
         this.spawnClock = Math.min(this.spawnClock, this.currentSpawnIntervalMs() - 1);
     }
-    spawnAndyPooBag(andy) {
+    spawnKomodoVenomCloud(komodo) {
         const maxSpread = Math.max(0, Math.min(2, Math.floor((this.speedLevel - 3) / 3)));
         const lanes = new Set([this.playerLane]);
         while (lanes.size < 1 + maxSpread) {
@@ -508,14 +508,14 @@ export class SpanielSmashGame {
         for (const lane of lanes) {
             this.entities.push({
                 id: this.nextEntityId++,
-                type: "poo-bag",
-                obstacleId: "andy-poo-bag",
+                type: "venom-cloud",
+                obstacleId: "komodo-venom-cloud",
                 jumpRule: "none",
                 x: this.laneX(lane),
-                y: andy.y + andy.height - 2,
-                width: this.laneWidth * SpanielSmashGame.pooBagWidthScale,
-                height: SpanielSmashGame.pooBagHeight,
-                speed: SpanielSmashGame.pooBagSpeed,
+                y: komodo.y + komodo.height - 2,
+                width: this.laneWidth * SwimSpanielGame.venomCloudWidthScale,
+                height: SwimSpanielGame.venomCloudHeight,
+                speed: SwimSpanielGame.venomCloudSpeed,
                 lane,
                 laneSwitchCooldownMs: 0,
                 direction: 1,
@@ -526,32 +526,32 @@ export class SpanielSmashGame {
     rollRareSpawnMs() { return 10000 + Math.floor(this.rng() * 10001); }
     rollSuperRareSpawnMs() { return 60000 + Math.floor(this.rng() * 540001); }
     rollMythicSpawnMs() { return 30000 + Math.floor(this.rng() * 60001); }
-    rollAndyThrowCooldownMs() {
-        const effectiveLevel = Math.min(this.speedLevel, SpanielSmashGame.maxSpeedLevel);
-        const reductionMs = (effectiveLevel - 1) * SpanielSmashGame.andyThrowLevelReductionMs;
-        const minThrowMs = Math.max(SpanielSmashGame.andyBossThrowMinFloorMs, SpanielSmashGame.andyBossThrowMinMs - reductionMs);
-        const maxThrowMs = Math.max(minThrowMs + SpanielSmashGame.andyBossThrowRangeFloorMs, SpanielSmashGame.andyBossThrowMaxMs - reductionMs);
+    rollKomodoThrowCooldownMs() {
+        const effectiveLevel = Math.min(this.speedLevel, SwimSpanielGame.maxSpeedLevel);
+        const reductionMs = (effectiveLevel - 1) * SwimSpanielGame.komodoThrowLevelReductionMs;
+        const minThrowMs = Math.max(SwimSpanielGame.komodoBossThrowMinFloorMs, SwimSpanielGame.komodoBossThrowMinMs - reductionMs);
+        const maxThrowMs = Math.max(minThrowMs + SwimSpanielGame.komodoBossThrowRangeFloorMs, SwimSpanielGame.komodoBossThrowMaxMs - reductionMs);
         const span = maxThrowMs - minThrowMs;
         return minThrowMs + Math.floor(this.rng() * (span + 1));
     }
-    bossSpanielGoalForLevel(level) {
-        const clampedLevel = Math.max(1, Math.min(SpanielSmashGame.maxSpeedLevel, Math.floor(level)));
+    bossRescueGoalForLevel(level) {
+        const clampedLevel = Math.max(1, Math.min(SwimSpanielGame.maxSpeedLevel, Math.floor(level)));
         if (clampedLevel === 1) {
             return 12;
         }
         return Math.min(14, 10 + ((clampedLevel - 1) % 6));
     }
     maybeCompleteBossFromOffscreenExit(entity) {
-        if (!this.andyBossActive || entity.type !== "andy" || entity.behaviorState?.kind !== "andyBoss") {
+        if (!this.komodoBossActive || entity.type !== "komodo" || entity.behaviorState?.kind !== "komodoBoss") {
             return;
         }
-        if (entity.y > this.height + SpanielSmashGame.entityCullMarginPx || entity.y + entity.height < -SpanielSmashGame.entityCullMarginPx) {
+        if (entity.y > this.height + SwimSpanielGame.entityCullMarginPx || entity.y + entity.height < -SwimSpanielGame.entityCullMarginPx) {
             this.completeBossEncounter(false);
         }
     }
     tickRuntimeTimers(deltaMs) {
-        this.puddleSlowMs = Math.max(0, this.puddleSlowMs - deltaMs);
-        this.wetPaintSlipMs = Math.max(0, this.wetPaintSlipMs - deltaMs);
+        this.siltSlowMs = Math.max(0, this.siltSlowMs - deltaMs);
+        this.currentBoostMs = Math.max(0, this.currentBoostMs - deltaMs);
         if (this.crashFreezeMs === 0) {
             this.playerImmortalMs = Math.max(0, this.playerImmortalMs - deltaMs);
         }
@@ -563,37 +563,37 @@ export class SpanielSmashGame {
         if (!behavior) {
             return;
         }
-        if (behavior.kind === "droneDrop" && behavior.phase === "telegraph") {
+        if (behavior.kind === "anchorFall" && behavior.phase === "telegraph") {
             behavior.phaseMs = Math.max(0, behavior.phaseMs - deltaMs);
             if (behavior.phaseMs === 0) {
                 behavior.phase = "falling";
                 entity.y = -24;
-                entity.speed = Math.max(entity.speed, SpanielSmashGame.staticObstacleSpeed + 0.3);
+                entity.speed = Math.max(entity.speed, SwimSpanielGame.staticObstacleSpeed + 0.3);
                 entity.direction = 1;
             }
             return;
         }
-        if (behavior.kind === "downdraft") {
+        if (behavior.kind === "mantaCurrent") {
             behavior.pushCooldownMs = Math.max(0, behavior.pushCooldownMs - deltaMs);
             return;
         }
-        if (behavior.kind === "skiSchoolSnake") {
+        if (behavior.kind === "fishSchool") {
             behavior.phaseMs = (behavior.phaseMs + deltaMs) % behavior.wavePeriodMs;
-            const lane = this.computeSkiSchoolLane(behavior.anchorLane, behavior.laneSpan, behavior.phaseMs + behavior.phaseOffsetMs, behavior.wavePeriodMs);
+            const lane = this.computeFishSchoolLane(behavior.anchorLane, behavior.laneSpan, behavior.phaseMs + behavior.phaseOffsetMs, behavior.wavePeriodMs);
             entity.lane = lane;
             return;
         }
-        if (behavior.kind === "andyBoss") {
+        if (behavior.kind === "komodoBoss") {
             const travelUnit = deltaMs / 16.67;
             behavior.throwCooldownMs = Math.max(0, behavior.throwCooldownMs - deltaMs);
             if (behavior.phase === "entering") {
                 entity.speed = 0;
-                entity.y += SpanielSmashGame.andyBossEnterSpeed * travelUnit;
-                if (entity.y >= SpanielSmashGame.andyBossEnterY) {
-                    entity.y = SpanielSmashGame.andyBossEnterY;
+                entity.y += SwimSpanielGame.komodoBossEnterSpeed * travelUnit;
+                if (entity.y >= SwimSpanielGame.komodoBossEnterY) {
+                    entity.y = SwimSpanielGame.komodoBossEnterY;
                     behavior.phase = "hovering";
-                    behavior.phaseMs = SpanielSmashGame.andyBossHoverDurationMs;
-                    behavior.throwCooldownMs = this.rollAndyThrowCooldownMs();
+                    behavior.phaseMs = SwimSpanielGame.komodoBossHoverDurationMs;
+                    behavior.throwCooldownMs = this.rollKomodoThrowCooldownMs();
                 }
                 return;
             }
@@ -601,26 +601,26 @@ export class SpanielSmashGame {
                 entity.speed = 0;
                 behavior.phaseMs = Math.max(0, behavior.phaseMs - deltaMs);
                 if (behavior.throwCooldownMs === 0) {
-                    this.spawnAndyPooBag(entity);
-                    behavior.throwCooldownMs = this.rollAndyThrowCooldownMs();
+                    this.spawnKomodoVenomCloud(entity);
+                    behavior.throwCooldownMs = this.rollKomodoThrowCooldownMs();
                 }
                 if (behavior.phaseMs === 0) {
                     behavior.phase = "exiting";
-                    entity.speed = SpanielSmashGame.andyBossExitSpeed;
+                    entity.speed = SwimSpanielGame.komodoBossExitSpeed;
                     entity.direction = 1;
                 }
                 return;
             }
-            entity.speed = SpanielSmashGame.andyBossExitSpeed;
+            entity.speed = SwimSpanielGame.komodoBossExitSpeed;
             entity.direction = 1;
         }
     }
-    applyDowndraftPushes() {
+    applyMantaCurrentPushes() {
         const playerTop = this.playerY() - this.playerJumpOffset();
         const playerBottom = playerTop + 34;
         for (const entity of this.entities) {
             const behavior = entity.behaviorState;
-            if (!behavior || behavior.kind !== "downdraft") {
+            if (!behavior || behavior.kind !== "mantaCurrent") {
                 continue;
             }
             if (behavior.pushCooldownMs > 0) {
@@ -636,14 +636,14 @@ export class SpanielSmashGame {
                 this.playerLane = clampedLane;
             }
             this.laneSwitchCooldownMs = Math.max(this.laneSwitchCooldownMs, 80);
-            behavior.pushCooldownMs = SpanielSmashGame.downdraftPushIntervalMs;
+            behavior.pushCooldownMs = SwimSpanielGame.mantaCurrentPushIntervalMs;
         }
     }
     canClearByJump(entity) {
         if (this.jumpTimerMs <= 0) {
             return false;
         }
-        if (entity.type === "rock") {
+        if (entity.type === "reef-rock") {
             return true;
         }
         return entity.jumpRule === "low" || entity.jumpRule === "high";
@@ -653,7 +653,7 @@ export class SpanielSmashGame {
         const survivors = [];
         const nextTouchingSurfaceEntityIds = new Set();
         for (const entity of this.entities) {
-            if (entity.type === "bloodstain") {
+            if (entity.type === "rescue-bubbles") {
                 survivors.push(entity);
                 continue;
             }
@@ -661,7 +661,7 @@ export class SpanielSmashGame {
                 survivors.push(entity);
                 continue;
             }
-            if (entity.type === "puddle-patch") {
+            if (entity.type === "silt-patch") {
                 if (this.jumpTimerMs > 0) {
                     survivors.push(entity);
                     continue;
@@ -671,12 +671,12 @@ export class SpanielSmashGame {
                     nextTouchingSurfaceEntityIds.add(id);
                 }
                 if (id < 0 || !this.touchingSurfaceEntityIds.has(id)) {
-                    this.puddleSlowMs = Math.min(SpanielSmashGame.maxPuddleStackMs, this.puddleSlowMs + SpanielSmashGame.puddleSlowDurationMs);
+                    this.siltSlowMs = Math.min(SwimSpanielGame.maxSiltStackMs, this.siltSlowMs + SwimSpanielGame.siltSlowDurationMs);
                 }
                 survivors.push(entity);
                 continue;
             }
-            if (entity.type === "ice-patch") {
+            if (entity.type === "current-stream") {
                 if (this.jumpTimerMs > 0) {
                     survivors.push(entity);
                     continue;
@@ -686,12 +686,12 @@ export class SpanielSmashGame {
                     nextTouchingSurfaceEntityIds.add(id);
                 }
                 if (id < 0 || !this.touchingSurfaceEntityIds.has(id)) {
-                    this.wetPaintSlipMs = Math.min(SpanielSmashGame.maxIceStackMs, this.wetPaintSlipMs + SpanielSmashGame.icePatchBoostDurationMs);
+                    this.currentBoostMs = Math.min(SwimSpanielGame.maxCurrentStackMs, this.currentBoostMs + SwimSpanielGame.currentStreamBoostDurationMs);
                 }
                 survivors.push(entity);
                 continue;
             }
-            if (entity.type === "slalom-poles") {
+            if (entity.type === "kelp-bed") {
                 if (this.jumpTimerMs > 0) {
                     survivors.push(entity);
                     continue;
@@ -701,33 +701,33 @@ export class SpanielSmashGame {
                     nextTouchingSurfaceEntityIds.add(id);
                 }
                 if (id < 0 || !this.touchingSurfaceEntityIds.has(id)) {
-                    this.puddleSlowMs = Math.min(SpanielSmashGame.maxPuddleStackMs, this.puddleSlowMs + SpanielSmashGame.puddleSlowDurationMs);
+                    this.siltSlowMs = Math.min(SwimSpanielGame.maxSiltStackMs, this.siltSlowMs + SwimSpanielGame.siltSlowDurationMs);
                 }
                 survivors.push(entity);
                 continue;
             }
-            if (entity.type === "drone-package-drop" && entity.behaviorState?.kind === "droneDrop" && entity.behaviorState.phase === "telegraph") {
+            if (entity.type === "falling-anchor" && entity.behaviorState?.kind === "anchorFall" && entity.behaviorState.phase === "telegraph") {
                 survivors.push(entity);
                 continue;
             }
             if (entity.type === "spaniel" || entity.type === "black-spaniel") {
-                this.spawnSmashEffect(entity.x, entity.y, "spaniel-smash");
-                this.spawnSmashEffect(entity.x, entity.y, "coin-pop");
-                this.spawnBloodstain(entity);
+                this.spawnRescueEffect(entity.x, entity.y, "spaniel-rescue");
+                this.spawnRescueEffect(entity.x, entity.y, "rescue-pop");
+                this.spawnRescueBubbles(entity);
                 this.score += entity.type === "black-spaniel" ? 200 : 100;
-                this.spanielsSmashed += 1;
-                this.levelSpanielsSmashed += 1;
-                this.mythicUnlocked = this.mythicUnlocked || this.spanielsSmashed >= 25;
+                this.spanielsRescued += 1;
+                this.levelSpanielsRescued += 1;
+                this.mythicUnlocked = this.mythicUnlocked || this.spanielsRescued >= 25;
                 continue;
             }
-            if (entity.type === "andy" && entity.behaviorState?.kind === "andyBoss" && this.canClearByJump(entity)) {
-                this.spawnSmashEffect(entity.x, entity.y, "spaniel-smash");
-                this.spawnSmashEffect(entity.x, entity.y, "coin-pop");
+            if (entity.type === "komodo" && entity.behaviorState?.kind === "komodoBoss" && this.canClearByJump(entity)) {
+                this.spawnRescueEffect(entity.x, entity.y, "spaniel-rescue");
+                this.spawnRescueEffect(entity.x, entity.y, "rescue-pop");
                 this.completeBossEncounter(true);
                 continue;
             }
-            if (entity.type === "poo-bag") {
-                this.spawnSmashEffect(entity.x, entity.y, "poo-splat");
+            if (entity.type === "venom-cloud") {
+                this.spawnRescueEffect(entity.x, entity.y, "venom-splash");
                 this.damagePlayer();
                 continue;
             }
@@ -740,7 +740,7 @@ export class SpanielSmashGame {
                 continue;
             }
             this.damagePlayer();
-            if (entity.type === "andy") {
+            if (entity.type === "komodo") {
                 survivors.push(entity);
             }
         }
@@ -751,13 +751,13 @@ export class SpanielSmashGame {
         if (this.playerImmortalMs > 0) {
             return;
         }
-        this.lives -= 1;
+        this.airTanks -= 1;
         this.crashFreezeMs = 650;
-        if (this.lives <= 0) {
+        if (this.airTanks <= 0) {
             this.gameOver = true;
             return;
         }
-        this.playerImmortalMs = SpanielSmashGame.respawnImmortalMs;
+        this.playerImmortalMs = SwimSpanielGame.respawnImmortalMs;
     }
     playerCollisionBounds() {
         const x = this.playerX();
@@ -773,7 +773,7 @@ export class SpanielSmashGame {
     }
     entityCollisionBounds(entity) {
         const bounds = { x: entity.x, y: entity.y, width: entity.width, height: entity.height };
-        if (entity.type === "rock" || entity.type === "drone-package-drop") {
+        if (entity.type === "reef-rock" || entity.type === "falling-anchor") {
             return {
                 x: bounds.x + bounds.width * 0.12,
                 y: bounds.y + bounds.height * 0.18,
@@ -781,7 +781,7 @@ export class SpanielSmashGame {
                 height: bounds.height * 0.58
             };
         }
-        if (entity.type === "poo-bag") {
+        if (entity.type === "venom-cloud") {
             return {
                 x: bounds.x + bounds.width * 0.18,
                 y: bounds.y + bounds.height * 0.18,
@@ -789,7 +789,7 @@ export class SpanielSmashGame {
                 height: bounds.height * 0.64
             };
         }
-        if (entity.type === "slalom-poles") {
+        if (entity.type === "kelp-bed") {
             return {
                 x: bounds.x + bounds.width * 0.28,
                 y: bounds.y + bounds.height * 0.05,
@@ -797,7 +797,7 @@ export class SpanielSmashGame {
                 height: bounds.height * 0.92
             };
         }
-        if (entity.type === "ice-crevasse") {
+        if (entity.type === "reef-trench") {
             return {
                 x: bounds.x + bounds.width * 0.05,
                 y: bounds.y + bounds.height * 0.2,
@@ -805,7 +805,7 @@ export class SpanielSmashGame {
                 height: bounds.height * 0.72
             };
         }
-        if (entity.type === "tree") {
+        if (entity.type === "coral") {
             return {
                 x: bounds.x + bounds.width * 0.06,
                 y: bounds.y + bounds.height * 0.1,
@@ -821,10 +821,10 @@ export class SpanielSmashGame {
             for (let j = i + 1; j < this.entities.length; j += 1) {
                 const first = this.entities[i];
                 const second = this.entities[j];
-                if (first.type === "andy" || second.type === "andy" || first.type === "poo-bag" || second.type === "poo-bag") {
+                if (first.type === "komodo" || second.type === "komodo" || first.type === "venom-cloud" || second.type === "venom-cloud") {
                     continue;
                 }
-                if (this.isSameSkiSchoolGroup(first, second)) {
+                if (this.isSameFishSchoolGroup(first, second)) {
                     continue;
                 }
                 if (!intersects(first, second)) {
@@ -840,11 +840,11 @@ export class SpanielSmashGame {
         }
         for (const index of indicesToTransform) {
             const entity = this.entities[index];
-            this.spawnSmashEffect(entity.x, entity.y, (entity.type === "spaniel" || entity.type === "black-spaniel") ? "spaniel-smash" : "obstacle-crash");
+            this.spawnRescueEffect(entity.x, entity.y, (entity.type === "spaniel" || entity.type === "black-spaniel") ? "spaniel-rescue" : "creature-stunned");
             this.entities[index] = {
                 ...entity,
                 id: this.nextEntityId++,
-                type: "bloodstain",
+                type: "rescue-bubbles",
                 obstacleId: undefined,
                 obstacleTier: undefined,
                 jumpRule: undefined,
@@ -852,7 +852,7 @@ export class SpanielSmashGame {
                 y: entity.y + entity.height + 4,
                 width: this.laneWidth * 0.55,
                 height: 18,
-                speed: SpanielSmashGame.staticObstacleSpeed,
+                speed: SwimSpanielGame.staticObstacleSpeed,
                 direction: 1,
                 laneSwitchCooldownMs: 0,
                 crashAnimationMs: 0
@@ -860,46 +860,46 @@ export class SpanielSmashGame {
         }
     }
     isMovingObstacle(entity) {
-        return entity.type === "skier"
-            || entity.type === "ski-school-instructor"
-            || entity.type === "ski-school-child"
-            || entity.type === "naked-skier"
+        return entity.type === "shark"
+            || entity.type === "fish-school-leader"
+            || entity.type === "fish-school-follower"
+            || entity.type === "jellyfish"
             || entity.type === "spaniel"
             || entity.type === "black-spaniel"
-            || entity.type === "helicopter-downdraft";
+            || entity.type === "manta-current";
     }
-    isSkiSchoolEntity(entity) {
-        return entity.type === "ski-school-instructor" || entity.type === "ski-school-child";
+    isFishSchoolEntity(entity) {
+        return entity.type === "fish-school-leader" || entity.type === "fish-school-follower";
     }
-    isSameSkiSchoolGroup(first, second) {
-        if (!this.isSkiSchoolEntity(first) || !this.isSkiSchoolEntity(second)) {
+    isSameFishSchoolGroup(first, second) {
+        if (!this.isFishSchoolEntity(first) || !this.isFishSchoolEntity(second)) {
             return false;
         }
-        return first.obstacleId === SpanielSmashGame.skiSchoolObstacleId
-            && second.obstacleId === SpanielSmashGame.skiSchoolObstacleId;
+        return first.obstacleId === SwimSpanielGame.fishSchoolObstacleId
+            && second.obstacleId === SwimSpanielGame.fishSchoolObstacleId;
     }
     isLethalForMovingObstacleCollision(entity) {
-        if (entity.type === "bloodstain"
-            || entity.type === "puddle-patch"
-            || entity.type === "slalom-poles"
-            || entity.type === "ice-patch"
+        if (entity.type === "rescue-bubbles"
+            || entity.type === "silt-patch"
+            || entity.type === "kelp-bed"
+            || entity.type === "current-stream"
             || entity.type === "spaniel"
             || entity.type === "black-spaniel") {
             return false;
         }
-        if (entity.type === "drone-package-drop" && entity.behaviorState?.kind === "droneDrop" && entity.behaviorState.phase === "telegraph") {
+        if (entity.type === "falling-anchor" && entity.behaviorState?.kind === "anchorFall" && entity.behaviorState.phase === "telegraph") {
             return false;
         }
         return true;
     }
-    spawnSmashEffect(x, y, kind) { this.effects.push({ kind, x, y, ttlMs: 300, maxTtlMs: 300 }); }
-    spawnBloodstain(entity) {
-        this.entities.push({ id: this.nextEntityId++, type: "bloodstain", x: this.laneX(this.entityLane(entity)), y: entity.y + entity.height + 4, width: this.laneWidth * 0.55, height: 18, speed: SpanielSmashGame.staticObstacleSpeed, lane: this.entityLane(entity), laneSwitchCooldownMs: 0, direction: 1, crashAnimationMs: 0 });
+    spawnRescueEffect(x, y, kind) { this.effects.push({ kind, x, y, ttlMs: 300, maxTtlMs: 300 }); }
+    spawnRescueBubbles(entity) {
+        this.entities.push({ id: this.nextEntityId++, type: "rescue-bubbles", x: this.laneX(this.entityLane(entity)), y: entity.y + entity.height + 4, width: this.laneWidth * 0.55, height: 18, speed: SwimSpanielGame.staticObstacleSpeed, lane: this.entityLane(entity), laneSwitchCooldownMs: 0, direction: 1, crashAnimationMs: 0 });
     }
     tickEffects(deltaMs) {
         this.effects = this.effects.map((effect) => {
             const ttlMs = Math.max(0, effect.ttlMs - deltaMs);
-            if (effect.kind !== "coin-pop") {
+            if (effect.kind !== "rescue-pop") {
                 return { ...effect, ttlMs };
             }
             const travelUnit = deltaMs / 16.67;
@@ -918,25 +918,25 @@ export class SpanielSmashGame {
         entity.crashAnimationMs ??= 0;
         this.entities.push(entity);
     }
-    spawnSkiSchoolDebug(childrenCount) {
+    spawnFishSchoolDebug(followerCount) {
         if (this.gameOver) {
             return;
         }
         const spawnLane = this.playerLane;
-        const childTotal = typeof childrenCount === "number"
-            ? Math.max(SpanielSmashGame.skiSchoolMinChildren, Math.min(SpanielSmashGame.skiSchoolMaxChildren, Math.floor(childrenCount)))
-            : this.skiSchoolChildrenForLevel();
-        this.spawnSkiSchoolSnake(spawnLane, 1, "rare", childTotal, 92);
+        const followerTotal = typeof followerCount === "number"
+            ? Math.max(SwimSpanielGame.fishSchoolMinChildren, Math.min(SwimSpanielGame.fishSchoolMaxChildren, Math.floor(followerCount)))
+            : this.fishSchoolFollowersForLevel();
+        this.spawnFishSchool(spawnLane, 1, "rare", followerTotal, 92);
     }
     restart() {
         this.playerLane = this.startingLane();
-        this.lives = 3;
+        this.airTanks = 3;
         this.score = 0;
         this.speedLevel = 1;
-        this.spanielsSmashed = 0;
-        this.levelSpanielsSmashed = 0;
+        this.spanielsRescued = 0;
+        this.levelSpanielsRescued = 0;
         this.gameOver = false;
-        this.andyBossActive = false;
+        this.komodoBossActive = false;
         this.victory = false;
         this.entities = [];
         this.effects = [];
@@ -953,23 +953,23 @@ export class SpanielSmashGame {
         this.crashFreezeMs = 0;
         this.sideObstacleOffsetY = 0;
         this.mythicUnlocked = false;
-        this.puddleSlowMs = 0;
-        this.wetPaintSlipMs = 0;
+        this.siltSlowMs = 0;
+        this.currentBoostMs = 0;
         this.playerImmortalMs = 0;
         this.levelUpBannerMs = 0;
         this.levelTransitionBoostMs = 0;
-        this.nextBossSpanielGoal = this.bossSpanielGoalForLevel(this.speedLevel);
+        this.nextBossRescueGoal = this.bossRescueGoalForLevel(this.speedLevel);
         this.nextEntityId = 1;
         this.touchingSurfaceEntityIds = new Set();
     }
     snapshot() {
         return {
-            lives: this.lives,
+            airTanks: this.airTanks,
             score: this.score,
             speedLevel: this.speedLevel,
-            spanielsSmashed: this.spanielsSmashed,
-            levelSpanielsSmashed: this.levelSpanielsSmashed,
-            nextBossSpanielGoal: this.nextBossSpanielGoal,
+            spanielsRescued: this.spanielsRescued,
+            levelSpanielsRescued: this.levelSpanielsRescued,
+            nextBossRescueGoal: this.nextBossRescueGoal,
             isGameOver: this.gameOver,
             playerX: this.playerX(),
             playerY: this.playerY(),
@@ -977,13 +977,13 @@ export class SpanielSmashGame {
             isPlayerImmortal: this.playerImmortalMs > 0,
             playerImmortalMs: this.playerImmortalMs,
             isCrashActive: this.crashFreezeMs > 0,
-            isBossActive: this.andyBossActive,
+            isBossActive: this.komodoBossActive,
             isVictory: this.victory,
             levelUpBannerMs: this.levelUpBannerMs,
             sideObstacleOffsetY: this.sideObstacleOffsetY,
             activeEffects: {
-                puddleSlowMs: this.puddleSlowMs,
-                wetPaintSlipMs: this.wetPaintSlipMs
+                siltSlowMs: this.siltSlowMs,
+                currentBoostMs: this.currentBoostMs
             },
             entities: this.entities.map((entity) => ({ ...entity, behaviorState: entity.behaviorState ? { ...entity.behaviorState } : undefined })),
             effects: this.effects.map((effect) => ({ ...effect }))
@@ -993,7 +993,7 @@ export class SpanielSmashGame {
         if (this.jumpTimerMs <= 0) {
             return 0;
         }
-        const progress = 1 - this.jumpTimerMs / SpanielSmashGame.jumpDurationMs;
+        const progress = 1 - this.jumpTimerMs / SwimSpanielGame.jumpDurationMs;
         return Math.sin(Math.PI * progress) * 26;
     }
     playerX() { return this.laneX(this.playerLane); }
@@ -1009,12 +1009,12 @@ export class SpanielSmashGame {
         return Math.max(0, Math.min(this.laneCount - 1, lane));
     }
     maybeMoveEntityLane(entity, deltaMs) {
-        if (entity.type !== "skier"
-            && entity.type !== "naked-skier"
+        if (entity.type !== "shark"
+            && entity.type !== "jellyfish"
             && entity.type !== "spaniel"
             && entity.type !== "black-spaniel"
-            && entity.type !== "andy"
-            && entity.type !== "helicopter-downdraft")
+            && entity.type !== "komodo"
+            && entity.type !== "manta-current")
             return;
         const currentLane = this.entityLane(entity);
         const cooldown = Math.max(0, (entity.laneSwitchCooldownMs ?? 0) - deltaMs);
@@ -1024,7 +1024,7 @@ export class SpanielSmashGame {
             return;
         }
         let targetLane = currentLane;
-        if (entity.type === "andy" && entity.behaviorState?.kind === "andyBoss") {
+        if (entity.type === "komodo" && entity.behaviorState?.kind === "komodoBoss") {
             if (entity.behaviorState.phase === "hovering" || entity.behaviorState.phase === "exiting") {
                 if (currentLane < this.playerLane)
                     targetLane = currentLane + 1;
@@ -1032,10 +1032,10 @@ export class SpanielSmashGame {
                     targetLane = currentLane - 1;
             }
             entity.lane = Math.max(this.minPlayableLane(), Math.min(this.maxPlayableLane(), targetLane));
-            entity.laneSwitchCooldownMs = SpanielSmashGame.andyBossLaneMoveMs;
+            entity.laneSwitchCooldownMs = SwimSpanielGame.komodoBossLaneMoveMs;
             return;
         }
-        if (entity.type === "andy") {
+        if (entity.type === "komodo") {
             if (currentLane < this.playerLane)
                 targetLane = currentLane + 1;
             else if (currentLane > this.playerLane)
@@ -1093,96 +1093,100 @@ export class PixelRenderer {
         this.height = height;
     }
     render(snapshot) {
-        this.ctx.fillStyle = "#f3fbff";
+        this.ctx.fillStyle = "#075985";
         this.ctx.fillRect(0, 0, this.width, this.height);
-        this.ctx.fillStyle = "#f3fbff";
+        this.ctx.fillStyle = "#0e7490";
         this.ctx.fillRect(20, 0, this.width - 40, this.height);
-        this.drawSlopeEdges(snapshot.sideObstacleOffsetY);
+        this.ctx.fillStyle = "rgba(103, 232, 249, 0.16)";
+        this.ctx.fillRect(20, 0, this.width - 40, 96);
+        this.ctx.fillStyle = "rgba(8, 47, 73, 0.18)";
+        this.ctx.fillRect(20, this.height - 150, this.width - 40, 150);
+        this.drawReefEdges(snapshot.sideObstacleOffsetY);
         const isJumping = !snapshot.isCrashActive && snapshot.playerJumpOffset > 0;
         if (isJumping) {
-            drawJumpShadow(this.ctx, snapshot.playerX, snapshot.playerY, snapshot.playerJumpOffset);
+            drawBoostShadow(this.ctx, snapshot.playerX, snapshot.playerY, snapshot.playerJumpOffset);
         }
         for (const entity of snapshot.entities) {
-            if (entity.type === "puddle-patch") {
-                drawPuddlePatch(this.ctx, entity.x, entity.y);
+            if (entity.type === "silt-patch") {
+                drawSiltPatch(this.ctx, entity.x, entity.y);
             }
-            else if (entity.type === "ice-patch") {
-                drawIcePatch(this.ctx, entity.x, entity.y);
+            else if (entity.type === "current-stream") {
+                drawCurrentStream(this.ctx, entity.x, entity.y);
             }
-            else if (entity.type === "ice-crevasse") {
-                drawIceCrevasse(this.ctx, entity.x, entity.y, entity.width);
+            else if (entity.type === "reef-trench") {
+                drawReefTrench(this.ctx, entity.x, entity.y, entity.width);
             }
-            else if (entity.type === "slalom-poles") {
-                drawSlalomPoles(this.ctx, entity.x, entity.y);
+            else if (entity.type === "kelp-bed") {
+                drawKelpBed(this.ctx, entity.x, entity.y);
             }
-            else if (entity.type === "drone-package-drop") {
-                if (entity.behaviorState?.kind === "droneDrop" && entity.behaviorState.phase === "telegraph") {
-                    drawDroneTelegraph(this.ctx, entity.x, entity.y);
+            else if (entity.type === "falling-anchor") {
+                if (entity.behaviorState?.kind === "anchorFall" && entity.behaviorState.phase === "telegraph") {
+                    drawAnchorTelegraph(this.ctx, entity.x, entity.y);
                 }
                 else {
-                    drawDroneCrate(this.ctx, entity.x, entity.y);
+                    drawFallingAnchor(this.ctx, entity.x, entity.y);
                 }
             }
-            else if (entity.type === "helicopter-downdraft") {
-                if (entity.behaviorState?.kind === "downdraft") {
-                    drawDowndraftZone(this.ctx, entity.x, entity.y, entity.behaviorState.pushDirection);
+            else if (entity.type === "manta-current") {
+                if (entity.behaviorState?.kind === "mantaCurrent") {
+                    drawMantaCurrent(this.ctx, entity.x, entity.y, entity.behaviorState.pushDirection);
                 }
                 else {
-                    drawDowndraftZone(this.ctx, entity.x, entity.y, 1);
+                    drawMantaCurrent(this.ctx, entity.x, entity.y, 1);
                 }
             }
-            else if (entity.type === "poo-bag") {
-                drawPooBag(this.ctx, entity.x, entity.y);
+            else if (entity.type === "venom-cloud") {
+                drawVenomCloud(this.ctx, entity.x, entity.y);
             }
-            else if (entity.type === "tree")
-                drawTree(this.ctx, entity.x, entity.y);
-            else if (entity.type === "rock") {
+            else if (entity.type === "coral")
+                drawCoral(this.ctx, entity.x, entity.y, entity.obstacleId, entity.width);
+            else if (entity.type === "reef-rock") {
                 if ((entity.crashAnimationMs ?? 0) > 0)
                     drawCrashPulse(this.ctx, entity.x, entity.y, entity.crashAnimationMs ?? 0, "#ffa500");
-                drawRock(this.ctx, entity.x, entity.y);
+                drawReefRock(this.ctx, entity.x, entity.y, entity.obstacleId, entity.width);
             }
-            else if (entity.type === "skier")
-                drawSkierSlim(this.ctx, entity.x, entity.y, "#3a86ff", "#ff6b6b");
-            else if (entity.type === "ski-school-instructor")
-                drawSkierSlim(this.ctx, entity.x, entity.y, "#dc2626", "#fde68a");
-            else if (entity.type === "ski-school-child") {
-                const paletteIndex = entity.behaviorState?.kind === "skiSchoolSnake" ? entity.behaviorState.paletteIndex : 0;
-                drawSkiSchoolChild(this.ctx, entity.x, entity.y, paletteIndex);
+            else if (entity.type === "shark")
+                drawShark(this.ctx, entity.x, entity.y, entity.obstacleId);
+            else if (entity.type === "fish-school-leader")
+                drawFish(this.ctx, entity.x, entity.y, "#fb7185", "#fecdd3");
+            else if (entity.type === "fish-school-follower") {
+                const paletteIndex = entity.behaviorState?.kind === "fishSchool" ? entity.behaviorState.paletteIndex : 0;
+                drawFishSchoolFollower(this.ctx, entity.x, entity.y, paletteIndex);
             }
-            else if (entity.type === "naked-skier")
-                drawNakedSkier(this.ctx, entity.x, entity.y);
+            else if (entity.type === "jellyfish")
+                drawJellyfish(this.ctx, entity.x, entity.y);
             else if (entity.type === "spaniel")
-                drawSpaniel(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x, "brown");
+                drawSpaniel(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x, "brown", entity.obstacleId);
             else if (entity.type === "black-spaniel")
-                drawSpaniel(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x, "black");
-            else if (entity.type === "bloodstain")
-                drawBloodstain(this.ctx, entity.x, entity.y);
+                drawSpaniel(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x, "black", entity.obstacleId);
+            else if (entity.type === "rescue-bubbles")
+                drawRescueBubbles(this.ctx, entity.x, entity.y);
             else {
-                drawAndyShadow(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x);
-                drawAndy(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x);
+                drawKomodoShadow(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x);
+                drawKomodo(this.ctx, entity.x, entity.y, snapshot.sideObstacleOffsetY + entity.x);
             }
         }
         const playerRenderY = snapshot.isCrashActive ? snapshot.playerY : snapshot.playerY - snapshot.playerJumpOffset;
         if (snapshot.isPlayerImmortal && !snapshot.isCrashActive) {
-            drawImmortalForceField(this.ctx, snapshot.playerX, playerRenderY, snapshot.playerImmortalMs ?? 0);
+            drawRescueShield(this.ctx, snapshot.playerX, playerRenderY, snapshot.playerImmortalMs ?? 0);
         }
         if (snapshot.isCrashActive) {
-            drawCrashedSkier(this.ctx, snapshot.playerX, snapshot.playerY, "#f97316", "#ffd166");
+            drawStunnedDiver(this.ctx, snapshot.playerX, snapshot.playerY);
         }
         else {
-            drawSkierSlim(this.ctx, snapshot.playerX, snapshot.playerY - snapshot.playerJumpOffset, "#f97316", "#ffd166", snapshot.playerJumpOffset);
+            drawDiver(this.ctx, snapshot.playerX, snapshot.playerY - snapshot.playerJumpOffset, snapshot.sideObstacleOffsetY, snapshot.playerJumpOffset);
         }
         for (const effect of snapshot.effects)
-            drawSmashEffect(this.ctx, effect);
+            drawRescueEffect(this.ctx, effect);
         this.ctx.fillStyle = "#1a1a1a";
         this.ctx.font = "16px monospace";
         if (snapshot.isCrashActive && !snapshot.isGameOver) {
             this.ctx.fillStyle = "rgba(12, 18, 31, 0.9)";
             this.ctx.fillRect(this.width / 2 - 120, 78, 240, 56);
             this.ctx.fillStyle = "#ff6b6b";
-            this.ctx.fillText("CRASHED!", this.width / 2 - 42, 100);
+            this.ctx.fillText("TANGLED!", this.width / 2 - 42, 100);
             this.ctx.fillStyle = "#f8fafc";
-            this.ctx.fillText(`Lives Left ${snapshot.lives}`, this.width / 2 - 72, 120);
+            this.ctx.fillText(`Air Tanks ${snapshot.airTanks}`, this.width / 2 - 72, 120);
         }
         if ((snapshot.levelUpBannerMs ?? 0) > 0 && !snapshot.isGameOver) {
             this.drawLevelUpCelebration(snapshot.levelUpBannerMs ?? 0);
@@ -1203,7 +1207,7 @@ export class PixelRenderer {
             this.ctx.fillStyle = "#fef08a";
             this.ctx.fillText("CONGRATULATIONS", this.width / 2 - 86, this.height / 2 - 10);
             this.ctx.fillStyle = "#dcfce7";
-            this.ctx.fillText("You beat Evil Andy", this.width / 2 - 82, this.height / 2 + 14);
+            this.ctx.fillText("All spaniels are safe", this.width / 2 - 82, this.height / 2 + 14);
             this.ctx.fillStyle = "#fff";
             this.ctx.fillText(`Final Score ${snapshot.score}`, this.width / 2 - 78, this.height / 2 + 38);
         }
@@ -1216,14 +1220,14 @@ export class PixelRenderer {
             this.ctx.fillText("Tap Restart below", this.width / 2 - 70, this.height / 2 + 48);
         }
     }
-    drawSlopeEdges(offsetY) {
-        const placements = this.computeSlopeEdgeDecorations(offsetY);
+    drawReefEdges(offsetY) {
+        const placements = this.computeReefEdgeDecorations(offsetY);
         for (const placement of placements) {
-            if (placement.kind === "tree") {
-                drawTree(this.ctx, placement.x, placement.y);
+            if (placement.kind === "coral") {
+                drawCoral(this.ctx, placement.x, placement.y, "edge-coral");
             }
             else {
-                drawRock(this.ctx, placement.x, placement.y);
+                drawReefRock(this.ctx, placement.x, placement.y, "edge-rock");
             }
         }
     }
@@ -1263,10 +1267,10 @@ export class PixelRenderer {
             this.ctx.fillRect(Math.round(sparkleX) - 1, Math.round(sparkleY) - 1, 3, 3);
         }
     }
-    computeSlopeEdgeDecorations(offsetY) {
-        const treeSpacing = 54;
+    computeReefEdgeDecorations(offsetY) {
+        const coralSpacing = 54;
         const rockSpacing = 170;
-        const treeStart = -16 + (offsetY % treeSpacing);
+        const coralStart = -16 + (offsetY % coralSpacing);
         const rockStart = 45 + (offsetY % rockSpacing);
         const placements = [];
         const tryPlace = (kind, x, y) => {
@@ -1277,86 +1281,191 @@ export class PixelRenderer {
             placements.push({ kind, x, y, bounds });
         };
         for (let y = rockStart - rockSpacing; y < this.height + 24; y += rockSpacing) {
-            tryPlace("rock", 6, y);
-            tryPlace("rock", this.width - 26, y + 80);
+            tryPlace("reef-rock", 6, y);
+            tryPlace("reef-rock", this.width - 26, y + 80);
         }
-        for (let y = treeStart - treeSpacing; y < this.height + 24; y += treeSpacing) {
-            tryPlace("tree", 2, y);
-            tryPlace("tree", this.width - 24, y + 20);
+        for (let y = coralStart - coralSpacing; y < this.height + 24; y += coralSpacing) {
+            tryPlace("coral", 2, y);
+            tryPlace("coral", this.width - 24, y + 20);
         }
         return placements;
     }
     sideDecorationBounds(kind, x, y) {
-        if (kind === "tree") {
+        if (kind === "coral") {
             return { x, y, width: 20, height: 30 };
         }
         return { x: x + 2, y: y + 2, width: 16, height: 12 };
     }
 }
-function drawTree(ctx, x, y) {
-    // Conifer silhouette: pointed crown with layered branch tiers.
-    ctx.fillStyle = "#14532d";
-    ctx.fillRect(x + 10, y, 1, 1);
-    ctx.fillRect(x + 9, y + 1, 3, 1);
-    ctx.fillRect(x + 8, y + 2, 5, 1);
-    ctx.fillRect(x + 7, y + 3, 7, 2);
-    ctx.fillRect(x + 6, y + 5, 9, 2);
-    ctx.fillStyle = "#166534";
-    ctx.fillRect(x + 5, y + 7, 11, 3);
-    ctx.fillRect(x + 4, y + 10, 13, 3);
-    ctx.fillStyle = "#15803d";
-    ctx.fillRect(x + 3, y + 13, 15, 3);
-    ctx.fillRect(x + 2, y + 16, 17, 3);
-    ctx.fillRect(x + 3, y + 19, 15, 3);
-    ctx.fillRect(x + 4, y + 22, 13, 2);
-    ctx.fillStyle = "#22c55e";
-    ctx.fillRect(x + 8, y + 3, 2, 1);
-    ctx.fillRect(x + 6, y + 8, 3, 1);
-    ctx.fillRect(x + 12, y + 9, 2, 1);
-    ctx.fillRect(x + 5, y + 14, 2, 1);
-    ctx.fillRect(x + 13, y + 15, 2, 1);
-    ctx.fillRect(x + 6, y + 20, 2, 1);
-    ctx.fillRect(x + 12, y + 21, 2, 1);
-    ctx.fillStyle = "#0f3d2e";
-    ctx.fillRect(x + 2, y + 20, 2, 2);
-    ctx.fillRect(x + 16, y + 20, 2, 2);
-    ctx.fillStyle = "#7f5539";
-    ctx.fillRect(x + 8, y + 24, 4, 6);
-    ctx.fillStyle = "#5e3b2a";
-    ctx.fillRect(x + 9, y + 24, 2, 6);
+function drawCoral(ctx, x, y, obstacleId = "staghorn-coral", width = 22) {
+    if (obstacleId === "fire-coral-pair") {
+        ctx.fillStyle = "#9f1239";
+        ctx.fillRect(x + 3, y + 12, 3, 16);
+        ctx.fillRect(x + 15, y + 10, 3, 18);
+        ctx.fillStyle = "#fb7185";
+        ctx.fillRect(x, y + 8, 8, 6);
+        ctx.fillRect(x + 12, y + 5, 9, 7);
+        ctx.fillStyle = "#fde047";
+        ctx.fillRect(x + 2, y + 9, 4, 2);
+        ctx.fillRect(x + 15, y + 7, 4, 2);
+    }
+    else if (obstacleId === "coral-pinnacle") {
+        ctx.fillStyle = "#7c2d12";
+        ctx.fillRect(x + 7, y + 5, 9, 25);
+        ctx.fillStyle = "#f97316";
+        ctx.fillRect(x + 4, y + 8, 15, 5);
+        ctx.fillRect(x + 2, y + 16, 19, 6);
+        ctx.fillStyle = "#fdba74";
+        ctx.fillRect(x + 7, y + 7, 8, 2);
+        ctx.fillRect(x + 5, y + 17, 11, 2);
+    }
+    else if (obstacleId === "coral-wall" || obstacleId === "reef-gate") {
+        const span = Math.max(22, Math.round(width));
+        ctx.fillStyle = "#9f1239";
+        ctx.fillRect(x, y + 18, span, 10);
+        ctx.fillStyle = "#e11d48";
+        for (let offset = 2; offset < span - 2; offset += 7) {
+            ctx.fillRect(x + offset, y + 7 + (offset % 3), 4, 14);
+            ctx.fillRect(x + offset - 1, y + 5 + (offset % 3), 6, 4);
+        }
+        if (obstacleId === "reef-gate") {
+            ctx.fillStyle = "#083344";
+            ctx.fillRect(x + Math.floor(span / 2) - 4, y + 18, 8, 10);
+        }
+    }
+    else if (obstacleId === "giant-table-coral") {
+        const span = Math.max(26, Math.round(width));
+        ctx.fillStyle = "#7c3aed";
+        ctx.fillRect(x + Math.floor(span / 2) - 3, y + 13, 6, 17);
+        ctx.fillStyle = "#c084fc";
+        ctx.fillRect(x + 2, y + 8, span - 4, 7);
+        ctx.fillRect(x + 6, y + 5, span - 12, 4);
+        ctx.fillStyle = "#f5d0fe";
+        ctx.fillRect(x + 7, y + 7, span - 14, 2);
+    }
+    else if (obstacleId === "shipwreck-mast") {
+        ctx.fillStyle = "#78350f";
+        ctx.fillRect(x + 9, y + 1, 4, 29);
+        ctx.fillRect(x + 3, y + 8, 17, 3);
+        ctx.fillStyle = "#fef3c7";
+        ctx.fillRect(x + 13, y + 11, 7, 8);
+        ctx.fillStyle = "#d6d3d1";
+        ctx.fillRect(x + 2, y + 25, 18, 3);
+    }
+    else {
+        ctx.fillStyle = "#be123c";
+        ctx.fillRect(x + 9, y + 10, 4, 20);
+        ctx.fillRect(x + 4, y + 15, 4, 13);
+        ctx.fillRect(x + 14, y + 8, 4, 20);
+        ctx.fillRect(x + 1, y + 20, 4, 8);
+        ctx.fillStyle = "#fb7185";
+        ctx.fillRect(x + 10, y + 3, 3, 10);
+        ctx.fillRect(x + 5, y + 9, 3, 9);
+        ctx.fillRect(x + 15, y + 1, 3, 10);
+        ctx.fillRect(x + 2, y + 14, 3, 9);
+        ctx.fillStyle = "#fecdd3";
+        ctx.fillRect(x + 10, y + 2, 3, 2);
+        ctx.fillRect(x + 5, y + 8, 3, 2);
+        ctx.fillRect(x + 15, y, 3, 2);
+    }
+    ctx.fillStyle = "#713f12";
+    ctx.fillRect(x + 2, y + 28, Math.max(17, Math.round(width) - 4), 2);
 }
-function drawRock(ctx, x, y) {
-    ctx.fillStyle = "#6b7280";
-    ctx.fillRect(x + 1, y + 7, 18, 11);
-    ctx.fillRect(x + 3, y + 4, 14, 4);
-    ctx.fillStyle = "#9ca3af";
-    ctx.fillRect(x + 5, y + 5, 8, 2);
-    ctx.fillRect(x + 12, y + 8, 4, 2);
-    ctx.fillStyle = "#4b5563";
-    ctx.fillRect(x + 10, y + 10, 2, 6);
-    ctx.fillRect(x + 8, y + 13, 6, 1);
+function drawReefRock(ctx, x, y, obstacleId = "volcanic-rock-cluster", width = 22) {
+    const span = Math.max(20, Math.round(width));
+    if (obstacleId === "blue-hole") {
+        ctx.fillStyle = "#155e75";
+        ctx.fillRect(x + 2, y + 5, span - 4, 15);
+        ctx.fillRect(x, y + 9, span, 8);
+        ctx.fillStyle = "#020617";
+        ctx.fillRect(x + 5, y + 8, span - 10, 9);
+        ctx.fillStyle = "#22d3ee";
+        ctx.fillRect(x + 6, y + 7, span - 12, 2);
+    }
+    else if (obstacleId === "shell-bed") {
+        ctx.fillStyle = "#ca8a04";
+        ctx.fillRect(x + 1, y + 14, span - 2, 7);
+        ctx.fillStyle = "#fef3c7";
+        ctx.fillRect(x + 3, y + 10, 5, 5);
+        ctx.fillRect(x + 12, y + 12, 6, 4);
+        ctx.fillStyle = "#fb7185";
+        ctx.fillRect(x + 4, y + 11, 3, 1);
+        ctx.fillRect(x + 14, y + 13, 3, 1);
+    }
+    else if (obstacleId === "lava-trench") {
+        ctx.fillStyle = "#1c1917";
+        ctx.fillRect(x, y + 7, span, 16);
+        ctx.fillStyle = "#7c2d12";
+        ctx.fillRect(x + 3, y + 12, span - 6, 7);
+        ctx.fillStyle = "#f97316";
+        ctx.fillRect(x + 4, y + 14, 6, 2);
+        ctx.fillRect(x + 13, y + 17, Math.max(4, span - 17), 2);
+        ctx.fillStyle = "#facc15";
+        ctx.fillRect(x + 7, y + 15, 4, 1);
+    }
+    else if (obstacleId === "ancient-anchor-field") {
+        ctx.fillStyle = "#475569";
+        ctx.fillRect(x + 4, y + 4, 3, 18);
+        ctx.fillRect(x + 1, y + 17, 10, 3);
+        ctx.fillRect(x + 15, y + 7, 3, 16);
+        ctx.fillRect(x + 12, y + 18, 10, 3);
+        ctx.fillStyle = "#a16207";
+        ctx.fillRect(x + 2, y + 22, span - 4, 4);
+    }
+    else if (obstacleId === "volcanic-vent") {
+        ctx.fillStyle = "#292524";
+        ctx.fillRect(x + 2, y + 13, span - 4, 11);
+        ctx.fillRect(x + 6, y + 8, span - 12, 7);
+        ctx.fillStyle = "#0f172a";
+        ctx.fillRect(x + 8, y + 8, span - 16, 3);
+        ctx.fillStyle = "#a5f3fc";
+        ctx.fillRect(x + 7, y + 3, 3, 3);
+        ctx.fillRect(x + 14, y, 2, 2);
+    }
+    else {
+        ctx.fillStyle = "#292524";
+        ctx.fillRect(x + 1, y + 10, 7, 10);
+        ctx.fillRect(x + 7, y + 5, 8, 15);
+        ctx.fillRect(x + 14, y + 9, 7, 11);
+        ctx.fillStyle = "#57534e";
+        ctx.fillRect(x + 4, y + 9, 4, 3);
+        ctx.fillRect(x + 9, y + 6, 4, 3);
+        ctx.fillRect(x + 15, y + 10, 3, 2);
+        ctx.fillStyle = "#f97316";
+        ctx.fillRect(x + 10, y + 15, 2, 4);
+    }
 }
-function drawBloodstain(ctx, x, y) {
-    ctx.fillStyle = "#7f1d1d";
-    ctx.fillRect(x + 2, y + 11, 16, 6);
-    ctx.fillRect(x + 5, y + 9, 10, 3);
-    ctx.fillRect(x + 1, y + 14, 3, 3);
-    ctx.fillRect(x + 16, y + 13, 4, 3);
-    ctx.fillStyle = "#b91c1c";
-    ctx.fillRect(x + 6, y + 10, 8, 3);
-    ctx.fillRect(x + 9, y + 14, 5, 2);
-    ctx.fillRect(x + 13, y + 8, 2, 2);
+function drawRescueBubbles(ctx, x, y) {
+    ctx.fillStyle = "rgba(207, 250, 254, 0.85)";
+    ctx.fillRect(x + 3, y + 12, 5, 5);
+    ctx.fillRect(x + 12, y + 8, 4, 4);
+    ctx.fillRect(x + 17, y + 3, 3, 3);
+    ctx.fillRect(x + 8, y + 2, 2, 2);
+    ctx.fillStyle = "rgba(8, 145, 178, 0.9)";
+    ctx.fillRect(x + 4, y + 13, 3, 3);
+    ctx.fillRect(x + 13, y + 9, 2, 2);
+    ctx.fillRect(x + 18, y + 4, 1, 1);
 }
-function drawSpaniel(ctx, x, y, animationSeed = 0, coat = "brown") {
+function drawSpaniel(ctx, x, y, animationSeed = 0, coat = "brown", obstacleId = "floating-life-ring") {
     const wagFrame = Math.floor(animationSeed / 5) % 4;
     const tailOffsetX = wagFrame < 2 ? -1 : 0;
     const tailOffsetY = wagFrame === 1 || wagFrame === 2 ? -1 : 0;
+    const paddleOffset = wagFrame % 2;
     const baseCoat = coat === "black" ? "#1f2937" : "#8b5e3c";
     const highlightCoat = coat === "black" ? "#4b5563" : "#c58f63";
     const shadowCoat = coat === "black" ? "#111827" : "#6b3f2a";
-    const collarColor = coat === "black" ? "#60a5fa" : "#2a9d8f";
+    const harnessColor = obstacleId === "golden-harness-spaniel" ? "#facc15" : "#f97316";
+    if (obstacleId === "floating-life-ring") {
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(x + 2, y + 10, 19, 7);
+        ctx.fillStyle = "#ef4444";
+        ctx.fillRect(x + 2, y + 10, 5, 7);
+        ctx.fillRect(x + 16, y + 10, 5, 7);
+        ctx.fillStyle = "#0e7490";
+        ctx.fillRect(x + 7, y + 12, 9, 3);
+    }
     ctx.fillStyle = baseCoat;
-    ctx.fillRect(x + 3, y + 9, 12, 7);
+    ctx.fillRect(x + 3, y + 8, 12, 8);
     ctx.fillRect(x + 14, y + 10, 4, 5);
     ctx.fillRect(x + 15, y + 7, 5, 5);
     ctx.fillRect(x + 19, y + 9, 3, 2);
@@ -1369,79 +1478,90 @@ function drawSpaniel(ctx, x, y, animationSeed = 0, coat = "brown") {
     ctx.fillStyle = shadowCoat;
     ctx.fillRect(x + 15, y + 8, 1, 5);
     ctx.fillRect(x + 18, y + 8, 1, 5);
-    ctx.fillRect(x + 5, y + 16, 2, 3);
-    ctx.fillRect(x + 10, y + 16, 2, 3);
-    ctx.fillRect(x + 15, y + 15, 2, 4);
-    ctx.fillStyle = collarColor;
-    ctx.fillRect(x + 13, y + 11, 2, 2);
+    ctx.fillRect(x + 5, y + 16 + paddleOffset, 3, 2);
+    ctx.fillRect(x + 11, y + 17 - paddleOffset, 3, 2);
+    ctx.fillRect(x + 16, y + 15 + paddleOffset, 2, 3);
+    ctx.fillStyle = harnessColor;
+    ctx.fillRect(x + 6, y + 8, 3, 8);
+    ctx.fillRect(x + 12, y + 8, 3, 8);
+    ctx.fillRect(x + 7, y + 10, 7, 3);
+    ctx.fillStyle = "#fef3c7";
+    ctx.fillRect(x + 9, y + 10, 3, 1);
+    if (obstacleId === "drifting-rescue-rope" || obstacleId === "tangled-spaniel") {
+        ctx.fillStyle = obstacleId === "tangled-spaniel" ? "#a3e635" : "#fde047";
+        ctx.fillRect(x, y + 4, 2, 14);
+        ctx.fillRect(x + 1, y + 4, 6, 2);
+        if (obstacleId === "tangled-spaniel")
+            ctx.fillRect(x + 2, y + 17, 12, 2);
+    }
     ctx.fillStyle = "#111827";
     ctx.fillRect(x + 18, y + 9, 1, 1);
     ctx.fillRect(x + 21, y + 10, 1, 1);
 }
-function drawPuddlePatch(ctx, x, y) {
-    ctx.fillStyle = "#1e40af";
-    ctx.fillRect(x + 1, y + 13, 20, 6);
-    ctx.fillRect(x + 3, y + 11, 16, 3);
-    ctx.fillRect(x + 5, y + 10, 6, 1);
-    ctx.fillRect(x + 12, y + 10, 5, 1);
-    ctx.fillStyle = "#2563eb";
-    ctx.fillRect(x + 4, y + 12, 6, 3);
-    ctx.fillRect(x + 12, y + 12, 6, 3);
-    ctx.fillRect(x + 8, y + 15, 7, 2);
-    ctx.fillStyle = "#93c5fd";
-    ctx.fillRect(x + 6, y + 12, 3, 1);
-    ctx.fillRect(x + 14, y + 13, 3, 1);
-    ctx.fillRect(x + 9, y + 14, 4, 1);
+function drawSiltPatch(ctx, x, y) {
+    ctx.fillStyle = "rgba(120, 53, 15, 0.78)";
+    ctx.fillRect(x + 2, y + 9, 8, 8);
+    ctx.fillRect(x + 8, y + 6, 9, 11);
+    ctx.fillRect(x + 15, y + 10, 7, 7);
+    ctx.fillStyle = "rgba(217, 119, 6, 0.75)";
+    ctx.fillRect(x + 5, y + 7, 4, 3);
+    ctx.fillRect(x + 12, y + 9, 5, 4);
+    ctx.fillStyle = "#fde68a";
+    ctx.fillRect(x + 1, y + 5, 2, 2);
+    ctx.fillRect(x + 19, y + 7, 2, 2);
+    ctx.fillRect(x + 9, y + 3, 1, 1);
+    ctx.fillRect(x + 14, y + 18, 2, 1);
 }
-function drawIcePatch(ctx, x, y) {
-    ctx.fillStyle = "#bfdbfe";
-    ctx.fillRect(x + 2, y + 11, 18, 8);
-    ctx.fillRect(x + 4, y + 9, 4, 2);
-    ctx.fillRect(x + 9, y + 9, 3, 2);
-    ctx.fillRect(x + 14, y + 9, 4, 2);
-    ctx.fillRect(x + 1, y + 18, 3, 1);
-    ctx.fillRect(x + 17, y + 18, 3, 1);
-    ctx.fillStyle = "#dbeafe";
-    ctx.fillRect(x + 5, y + 12, 10, 2);
-    ctx.fillRect(x + 8, y + 15, 9, 1);
-    ctx.fillStyle = "#60a5fa";
-    ctx.fillRect(x + 3, y + 18, 14, 1);
-    ctx.fillRect(x + 7, y + 10, 1, 8);
-    ctx.fillRect(x + 12, y + 11, 1, 7);
+function drawCurrentStream(ctx, x, y) {
+    ctx.fillStyle = "rgba(34, 211, 238, 0.35)";
+    ctx.fillRect(x, y + 3, 22, 17);
+    ctx.fillStyle = "#a5f3fc";
+    ctx.fillRect(x + 1, y + 6, 13, 2);
+    ctx.fillRect(x + 6, y + 12, 14, 2);
+    ctx.fillRect(x + 2, y + 18, 11, 1);
+    ctx.fillStyle = "#0891b2";
+    ctx.fillRect(x + 14, y + 4, 3, 6);
+    ctx.fillRect(x + 17, y + 6, 4, 2);
+    ctx.fillRect(x + 20, y + 5, 2, 4);
+    ctx.fillRect(x + 13, y + 10, 3, 6);
+    ctx.fillRect(x + 16, y + 12, 4, 2);
+    ctx.fillRect(x + 19, y + 11, 2, 4);
 }
-function drawSlalomPoles(ctx, x, y) {
-    ctx.fillStyle = "#ef4444";
-    ctx.fillRect(x + 6, y + 3, 2, 20);
-    ctx.fillStyle = "#1d4ed8";
-    ctx.fillRect(x + 14, y + 3, 2, 20);
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(x + 6, y + 8, 2, 2);
-    ctx.fillRect(x + 6, y + 13, 2, 2);
-    ctx.fillRect(x + 6, y + 18, 2, 2);
-    ctx.fillRect(x + 14, y + 6, 2, 2);
-    ctx.fillRect(x + 14, y + 11, 2, 2);
-    ctx.fillRect(x + 14, y + 16, 2, 2);
-    ctx.fillStyle = "#1f2937";
-    ctx.fillRect(x + 5, y + 23, 4, 1);
-    ctx.fillRect(x + 13, y + 23, 4, 1);
+function drawKelpBed(ctx, x, y) {
+    ctx.fillStyle = "#14532d";
+    ctx.fillRect(x + 5, y + 6, 3, 19);
+    ctx.fillRect(x + 13, y + 3, 3, 22);
+    ctx.fillStyle = "#22c55e";
+    ctx.fillRect(x + 3, y + 8, 4, 3);
+    ctx.fillRect(x + 7, y + 13, 4, 3);
+    ctx.fillRect(x + 11, y + 6, 4, 3);
+    ctx.fillRect(x + 15, y + 12, 4, 3);
+    ctx.fillStyle = "#a3e635";
+    ctx.fillRect(x + 4, y + 8, 2, 1);
+    ctx.fillRect(x + 8, y + 13, 2, 1);
+    ctx.fillRect(x + 12, y + 6, 2, 1);
+    ctx.fillRect(x + 16, y + 12, 2, 1);
+    ctx.fillStyle = "#78350f";
+    ctx.fillRect(x + 3, y + 24, 15, 2);
 }
-function drawIceCrevasse(ctx, x, y, width) {
+function drawReefTrench(ctx, x, y, width) {
     const totalWidth = Math.max(24, Math.round(width));
+    const roundedX = Math.round(x);
+    ctx.fillStyle = "#164e63";
+    ctx.fillRect(roundedX, y + 6, totalWidth, 16);
+    ctx.fillStyle = "#020617";
+    ctx.fillRect(roundedX + 3, y + 9, totalWidth - 6, 11);
     ctx.fillStyle = "#0f172a";
-    ctx.fillRect(Math.round(x), y + 9, totalWidth, 9);
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(Math.round(x) + 2, y + 11, Math.max(6, totalWidth - 4), 5);
-    ctx.fillStyle = "#93c5fd";
-    ctx.fillRect(Math.round(x) + 1, y + 8, Math.max(6, totalWidth - 2), 1);
-    ctx.fillRect(Math.round(x) + 3, y + 18, Math.max(4, totalWidth - 6), 1);
-    const crackStart = Math.round(x) + Math.max(3, Math.floor(totalWidth * 0.16));
-    ctx.fillStyle = "#e2e8f0";
-    ctx.fillRect(crackStart, y + 12, 2, 3);
-    ctx.fillRect(crackStart + Math.floor(totalWidth * 0.18), y + 13, 2, 2);
-    ctx.fillRect(crackStart + Math.floor(totalWidth * 0.4), y + 11, 2, 3);
-    ctx.fillRect(crackStart + Math.floor(totalWidth * 0.64), y + 12, 2, 2);
+    ctx.fillRect(roundedX + 6, y + 11, totalWidth - 12, 9);
+    ctx.fillStyle = "#f97316";
+    for (let offset = 2; offset < totalWidth - 2; offset += 9) {
+        ctx.fillRect(roundedX + offset, y + 4 + (offset % 2), 3, 5);
+        ctx.fillRect(roundedX + offset + 1, y + 20, 2, 4);
+    }
+    ctx.fillStyle = "#67e8f9";
+    ctx.fillRect(roundedX + 4, y + 8, totalWidth - 8, 1);
 }
-function drawDroneTelegraph(ctx, x, y) {
+function drawAnchorTelegraph(ctx, x, y) {
     ctx.fillStyle = "rgba(239, 68, 68, 0.75)";
     ctx.fillRect(x + 3, y + 11, 14, 2);
     ctx.fillRect(x + 9, y + 6, 2, 12);
@@ -1449,265 +1569,150 @@ function drawDroneTelegraph(ctx, x, y) {
     ctx.fillRect(x + 1, y + 9, 18, 1);
     ctx.fillRect(x + 1, y + 15, 18, 1);
 }
-function drawDroneCrate(ctx, x, y) {
-    ctx.fillStyle = "#92400e";
-    ctx.fillRect(x + 3, y + 6, 16, 14);
-    ctx.fillStyle = "#f59e0b";
-    ctx.fillRect(x + 4, y + 7, 14, 12);
-    ctx.fillStyle = "#7c2d12";
-    ctx.fillRect(x + 9, y + 7, 2, 12);
-    ctx.fillRect(x + 4, y + 12, 14, 2);
+function drawFallingAnchor(ctx, x, y) {
+    ctx.fillStyle = "#334155";
+    ctx.fillRect(x + 9, y + 2, 3, 15);
+    ctx.fillRect(x + 5, y + 7, 11, 3);
+    ctx.fillRect(x + 3, y + 16, 5, 3);
+    ctx.fillRect(x + 14, y + 16, 5, 3);
+    ctx.fillRect(x + 6, y + 14, 10, 3);
+    ctx.fillStyle = "#94a3b8";
+    ctx.fillRect(x + 10, y + 3, 1, 12);
+    ctx.fillRect(x + 6, y + 8, 9, 1);
 }
-function drawPooBag(ctx, x, y) {
-    ctx.fillStyle = "#14532d";
-    ctx.fillRect(x + 4, y + 5, 12, 10);
-    ctx.fillRect(x + 8, y + 3, 4, 2);
-    ctx.fillRect(x + 4, y + 7, 2, 6);
+function drawVenomCloud(ctx, x, y) {
+    ctx.fillStyle = "rgba(20, 83, 45, 0.88)";
+    ctx.fillRect(x + 2, y + 8, 8, 8);
+    ctx.fillRect(x + 7, y + 4, 9, 12);
+    ctx.fillRect(x + 14, y + 7, 7, 8);
     ctx.fillStyle = "#22c55e";
-    ctx.fillRect(x + 6, y + 7, 8, 6);
-    ctx.fillStyle = "#86efac";
-    ctx.fillRect(x + 11, y + 8, 2, 2);
+    ctx.fillRect(x + 5, y + 10, 5, 4);
+    ctx.fillRect(x + 10, y + 6, 5, 5);
+    ctx.fillRect(x + 15, y + 9, 4, 4);
+    ctx.fillStyle = "#bef264";
+    ctx.fillRect(x + 4, y + 5, 2, 2);
+    ctx.fillRect(x + 18, y + 3, 2, 2);
+    ctx.fillRect(x + 12, y + 17, 2, 2);
+    ctx.fillStyle = "#052e16";
+    ctx.fillRect(x + 8, y + 11, 2, 2);
+    ctx.fillRect(x + 15, y + 8, 1, 1);
 }
-function drawSkierSlim(ctx, x, y, bodyColor, helmetColor, jumpOffset = 0) {
-    const inAir = jumpOffset > 0;
-    const bodyHeight = inAir ? 9 : 10;
-    const bodyY = inAir ? y + 13 : y + 12;
-    const helmetY = inAir ? y + 5 : y + 6;
-    const poleStartY = bodyY + 1;
-    const poleLength = inAir ? 11 : 13;
-    const skiStartY = inAir ? y + 24 : y + 26;
-    const skiSpread = inAir ? [0, 1, 1, 2, 2, 3] : [0, 1, 1, 2, 2, 3, 3];
-    const legTopY = bodyY + bodyHeight - 1;
-    const legHeight = inAir ? 5 : 6;
-    // Slimmer torso/helmet while keeping the established downhill ski stance.
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 6, bodyY, 10, bodyHeight);
-    ctx.fillStyle = bodyColor;
-    ctx.fillRect(x + 7, bodyY + 1, 8, bodyHeight - 1);
-    ctx.fillRect(x + 6, bodyY + 2, 1, 2);
-    ctx.fillRect(x + 15, bodyY + 2, 1, 2);
-    ctx.fillStyle = "rgba(15, 23, 42, 0.3)";
-    ctx.fillRect(x + 11, bodyY + 2, 1, Math.max(2, bodyHeight - 4));
-    ctx.fillRect(x + 9, bodyY + bodyHeight - 3, 4, 1);
-    ctx.fillStyle = helmetColor;
-    ctx.fillRect(x + 9, helmetY, 5, 5);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 10, helmetY + 2, 3, 2);
-    ctx.fillRect(x + 9, helmetY + 4, 5, 1);
-    ctx.fillStyle = "#e2e8f0";
-    ctx.fillRect(x + 10, helmetY + 1, 2, 1);
-    ctx.fillStyle = "#475569";
-    ctx.fillRect(x + 9, helmetY + 2, 1, 2);
-    ctx.fillRect(x + 13, helmetY + 2, 1, 2);
+function drawDiver(ctx, x, y, animationSeed = 0, boostOffset = 0) {
+    const boosted = boostOffset > 0;
+    const kickFrame = Math.floor(animationSeed / 6) % 2;
+    const bodyY = y + 10;
+    const finLift = kickFrame === 0 ? 0 : 3;
+    // Horizontal swimmer silhouette: fins left, mask and bubbles right.
+    ctx.fillStyle = "#facc15";
+    ctx.fillRect(x, bodyY + 1 - finLift, 7, 4);
+    ctx.fillRect(x, bodyY + 8 + finLift, 7, 4);
+    ctx.fillRect(x + 5, bodyY + 3, 5, 7);
     ctx.fillStyle = "#1e293b";
-    ctx.fillRect(x + 9, helmetY + 5, 5, 1);
-    ctx.fillRect(x + 10, helmetY + 6, 2, 1);
-    ctx.fillStyle = "#1f2937";
-    ctx.fillRect(x + 8, legTopY, 2, legHeight);
-    ctx.fillRect(x + 12, legTopY, 2, legHeight);
-    ctx.fillStyle = "#0b1220";
-    ctx.fillRect(x + 7, legTopY + legHeight - 1, 3, 2);
-    ctx.fillRect(x + 12, legTopY + legHeight - 1, 3, 2);
-    for (let index = 0; index < poleLength; index += 1) {
-        const diagonalOffset = Math.floor((index + 1) / 3);
-        const rowY = poleStartY + index;
-        const leftX = x + 6 - diagonalOffset;
-        const rightX = x + 16 + diagonalOffset;
-        ctx.fillStyle = "#000000";
-        ctx.fillRect(leftX, rowY, 1, 1);
-        ctx.fillRect(rightX, rowY, 1, 1);
-    }
+    ctx.fillRect(x + 5, bodyY + 3, 7, 3);
+    ctx.fillRect(x + 5, bodyY + 8, 7, 3);
+    ctx.fillStyle = "#f97316";
+    ctx.fillRect(x + 9, bodyY + 2, 9, 9);
+    ctx.fillRect(x + 16, bodyY + 4, 4, 5);
     ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 6, poleStartY, 1, 1);
-    ctx.fillRect(x + 15, poleStartY, 1, 1);
-    const poleTipY = poleStartY + poleLength - 1;
-    const poleTipOffset = Math.floor((poleLength + 1) / 3);
-    const leftPoleTipX = x + 6 - poleTipOffset;
-    const rightPoleTipX = x + 16 + poleTipOffset;
-    ctx.fillStyle = "#f59e0b";
-    ctx.fillRect(leftPoleTipX, poleTipY, 2, 1);
-    ctx.fillRect(rightPoleTipX, poleTipY, 2, 1);
-    for (let index = 0; index < skiSpread.length; index += 1) {
-        const spread = skiSpread[index] ?? 0;
-        const rowY = skiStartY + index;
-        const leftSkiX = x + 7 - spread;
-        const rightSkiX = x + 12 + spread;
-        ctx.fillStyle = "#334155";
-        ctx.fillRect(leftSkiX, rowY, 4, 1);
-        ctx.fillRect(rightSkiX, rowY, 4, 1);
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(leftSkiX + 3, rowY, 1, 1);
-        ctx.fillRect(rightSkiX + 3, rowY, 1, 1);
-        ctx.fillStyle = "#93c5fd";
-        ctx.fillRect(leftSkiX, rowY, 1, 1);
-        ctx.fillRect(rightSkiX, rowY, 1, 1);
-    }
-    const tipSpread = skiSpread[skiSpread.length - 1] ?? 0;
-    const skiTipY = skiStartY + skiSpread.length - 1;
-    ctx.fillStyle = "#e5e7eb";
-    ctx.fillRect(x + 6 - tipSpread, skiTipY, 1, 1);
-    ctx.fillRect(x + 16 + tipSpread, skiTipY, 1, 1);
+    ctx.fillRect(x + 8, bodyY, 9, 3);
+    ctx.fillRect(x + 8, bodyY + 11, 9, 3);
+    ctx.fillStyle = "#e2e8f0";
+    ctx.fillRect(x + 9, bodyY - 2, 8, 3);
+    ctx.fillStyle = "#fde047";
+    ctx.fillRect(x + 18, bodyY + 2, 6, 9);
+    ctx.fillStyle = "#cffafe";
+    ctx.fillRect(x + 20, bodyY + 3, 4, 5);
+    ctx.fillStyle = "#0891b2";
+    ctx.fillRect(x + 21, bodyY + 4, 3, 2);
+    ctx.fillStyle = "#fb923c";
+    ctx.fillRect(x + 13, bodyY + 5, 7, 2);
+    ctx.fillRect(x + 12, bodyY + 9, 6, 2);
+    ctx.fillStyle = "#22d3ee";
+    ctx.fillRect(x + 25, bodyY + 3, 2, 2);
+    ctx.fillRect(x + 28, bodyY, 2, 2);
+    if (boosted)
+        ctx.fillRect(x - 3, bodyY + 6, 5, 2);
 }
-const SKI_SCHOOL_CHILD_COLORS = [
+function drawShark(ctx, x, y, obstacleId = "reef-shark") {
+    const isGhost = obstacleId === "ghost-shark";
+    const isTiger = obstacleId === "tiger-shark";
+    const isHammerhead = obstacleId === "hammerhead-shark";
+    const isBarracuda = obstacleId === "barracuda-crossing";
+    ctx.fillStyle = isGhost ? "rgba(186, 230, 253, 0.72)" : isTiger ? "#92400e" : isBarracuda ? "#64748b" : "#334155";
+    ctx.fillRect(x + 3, y + 10, 16, 9);
+    ctx.fillRect(x + 18, y + (isHammerhead ? 9 : 12), isHammerhead ? 3 : 5, isHammerhead ? 11 : 5);
+    ctx.fillRect(x, y + 7, 5, 14);
+    if (isHammerhead)
+        ctx.fillRect(x + 17, y + 8, 7, 3);
+    ctx.fillStyle = isGhost ? "rgba(224, 242, 254, 0.72)" : "#64748b";
+    ctx.fillRect(x + 6, y + 8, 9, 3);
+    ctx.fillRect(x + 9, y + 5, 5, 4);
+    ctx.fillRect(x + 8, y + 18, 6, 4);
+    if (isTiger) {
+        ctx.fillStyle = "#451a03";
+        ctx.fillRect(x + 7, y + 10, 2, 6);
+        ctx.fillRect(x + 12, y + 10, 2, 7);
+    }
+    if (isBarracuda) {
+        ctx.fillStyle = "#cbd5e1";
+        ctx.fillRect(x + 5, y + 13, 13, 2);
+    }
+    ctx.fillStyle = "#f8fafc";
+    ctx.fillRect(x + 18, y + 15, 4, 2);
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(x + 18, y + 12, 1, 1);
+    ctx.fillRect(x + 21, y + 14, 2, 1);
+}
+function drawFish(ctx, x, y, bodyColor, highlightColor) {
+    ctx.fillStyle = bodyColor;
+    ctx.fillRect(x + 5, y + 10, 12, 8);
+    ctx.fillRect(x + 16, y + 12, 4, 4);
+    ctx.fillRect(x + 1, y + 8, 5, 12);
+    ctx.fillStyle = highlightColor;
+    ctx.fillRect(x + 7, y + 11, 8, 2);
+    ctx.fillRect(x + 10, y + 8, 4, 3);
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(x + 17, y + 12, 1, 1);
+}
+const FISH_SCHOOL_COLORS = [
     { body: "#2563eb", helmet: "#bfdbfe" },
     { body: "#16a34a", helmet: "#dcfce7" },
     { body: "#7c3aed", helmet: "#ddd6fe" },
     { body: "#d97706", helmet: "#fde68a" },
     { body: "#0f766e", helmet: "#99f6e4" }
 ];
-function drawSkiSchoolChild(ctx, x, y, paletteIndex) {
-    const palette = SKI_SCHOOL_CHILD_COLORS[((paletteIndex % SKI_SCHOOL_CHILD_COLORS.length) + SKI_SCHOOL_CHILD_COLORS.length) % SKI_SCHOOL_CHILD_COLORS.length];
-    const helmetY = y + 9;
-    const bodyY = y + 14;
-    const legY = y + 20;
-    const poleStartY = bodyY + 1;
-    const skiRows = [0, 1, 1, 2];
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 8, bodyY, 6, 7);
-    ctx.fillStyle = palette.body;
-    ctx.fillRect(x + 9, bodyY + 1, 4, 6);
-    ctx.fillRect(x + 8, bodyY + 2, 1, 2);
-    ctx.fillRect(x + 13, bodyY + 2, 1, 2);
-    ctx.fillStyle = "rgba(15, 23, 42, 0.3)";
-    ctx.fillRect(x + 11, bodyY + 2, 1, 4);
-    ctx.fillStyle = palette.helmet;
-    ctx.fillRect(x + 9, helmetY, 4, 4);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 10, helmetY + 2, 2, 1);
-    ctx.fillRect(x + 9, helmetY + 3, 4, 1);
+function drawFishSchoolFollower(ctx, x, y, paletteIndex) {
+    const palette = FISH_SCHOOL_COLORS[((paletteIndex % FISH_SCHOOL_COLORS.length) + FISH_SCHOOL_COLORS.length) % FISH_SCHOOL_COLORS.length];
+    drawFish(ctx, x, y, palette.body, palette.helmet);
+}
+function drawJellyfish(ctx, x, y) {
+    ctx.fillStyle = "#c084fc";
+    ctx.fillRect(x + 5, y + 7, 13, 8);
+    ctx.fillRect(x + 7, y + 4, 9, 4);
+    ctx.fillStyle = "#e9d5ff";
+    ctx.fillRect(x + 8, y + 6, 6, 3);
+    ctx.fillStyle = "#7e22ce";
+    ctx.fillRect(x + 7, y + 15, 2, 11);
+    ctx.fillRect(x + 11, y + 15, 2, 9);
+    ctx.fillRect(x + 15, y + 15, 2, 12);
+    ctx.fillStyle = "#f0abfc";
+    ctx.fillRect(x + 8, y + 17, 1, 7);
+    ctx.fillRect(x + 12, y + 17, 1, 5);
+    ctx.fillRect(x + 16, y + 17, 1, 8);
+}
+function drawMantaCurrent(ctx, x, y, pushDirection) {
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(x + 7, y + 7, 10, 9);
+    ctx.fillRect(x + 2, y + 9, 7, 5);
+    ctx.fillRect(x + 15, y + 9, 7, 5);
+    ctx.fillRect(x, y + 11, 4, 2);
+    ctx.fillRect(x + 20, y + 11, 4, 2);
+    ctx.fillRect(x + 11, y + 15, 2, 8);
+    ctx.fillStyle = "#64748b";
+    ctx.fillRect(x + 8, y + 8, 8, 4);
     ctx.fillStyle = "#e2e8f0";
-    ctx.fillRect(x + 10, helmetY + 1, 1, 1);
-    ctx.fillStyle = "#1f2937";
-    ctx.fillRect(x + 9, legY, 1, 4);
-    ctx.fillRect(x + 12, legY, 1, 4);
-    ctx.fillStyle = "#0b1220";
-    ctx.fillRect(x + 9, legY + 3, 2, 1);
-    ctx.fillRect(x + 12, legY + 3, 2, 1);
-    for (let index = 0; index < 8; index += 1) {
-        const diagonalOffset = Math.floor(index / 4);
-        const rowY = poleStartY + index;
-        ctx.fillStyle = "#000000";
-        ctx.fillRect(x + 8 - diagonalOffset, rowY, 1, 1);
-        ctx.fillRect(x + 14 + diagonalOffset, rowY, 1, 1);
-    }
-    const skiStartY = y + 25;
-    for (let index = 0; index < skiRows.length; index += 1) {
-        const spread = skiRows[index] ?? 0;
-        const rowY = skiStartY + index;
-        const leftSkiX = x + 8 - spread;
-        const rightSkiX = x + 12 + spread;
-        ctx.fillStyle = "#334155";
-        ctx.fillRect(leftSkiX, rowY, 3, 1);
-        ctx.fillRect(rightSkiX, rowY, 3, 1);
-        ctx.fillStyle = "#93c5fd";
-        ctx.fillRect(leftSkiX, rowY, 1, 1);
-        ctx.fillRect(rightSkiX, rowY, 1, 1);
-    }
-}
-function drawSkier(ctx, x, y, bodyColor, helmetColor, jumpOffset = 0) {
-    const inAir = jumpOffset > 0;
-    const bodyHeight = inAir ? 10 : 12;
-    const bodyY = inAir ? y + 12 : y + 11;
-    const helmetY = inAir ? y + 4 : y + 5;
-    const poleStartY = bodyY + 2;
-    const poleLength = inAir ? 11 : 13;
-    const skiStartY = inAir ? y + 24 : y + 26;
-    const skiSpread = inAir ? [0, 1, 1, 2, 2, 3] : [0, 1, 1, 2, 2, 3, 3];
-    const legTopY = bodyY + bodyHeight - 1;
-    const legHeight = inAir ? 5 : 6;
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 5, bodyY, 12, bodyHeight);
-    ctx.fillStyle = bodyColor;
-    ctx.fillRect(x + 6, bodyY + 1, 10, bodyHeight - 1);
-    ctx.fillRect(x + 5, bodyY + 2, 1, 3);
-    ctx.fillRect(x + 16, bodyY + 2, 1, 3);
-    ctx.fillStyle = "rgba(15, 23, 42, 0.3)";
-    ctx.fillRect(x + 11, bodyY + 2, 2, Math.max(2, bodyHeight - 4));
-    ctx.fillRect(x + 8, bodyY + bodyHeight - 3, 6, 1);
-    ctx.fillStyle = helmetColor;
-    ctx.fillRect(x + 8, helmetY, 6, 6);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 9, helmetY + 2, 4, 3);
-    ctx.fillRect(x + 8, helmetY + 5, 6, 1);
-    ctx.fillStyle = "#e2e8f0";
-    ctx.fillRect(x + 9, helmetY + 1, 3, 1);
-    ctx.fillStyle = "#475569";
-    ctx.fillRect(x + 8, helmetY + 3, 1, 2);
-    ctx.fillRect(x + 13, helmetY + 3, 1, 2);
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(x + 8, helmetY + 6, 6, 1);
-    ctx.fillRect(x + 10, helmetY + 7, 2, 1);
-    ctx.fillStyle = "#1f2937";
-    ctx.fillRect(x + 8, legTopY, 2, legHeight);
-    ctx.fillRect(x + 12, legTopY, 2, legHeight);
-    ctx.fillStyle = "#0b1220";
-    ctx.fillRect(x + 7, legTopY + legHeight - 1, 3, 2);
-    ctx.fillRect(x + 12, legTopY + legHeight - 1, 3, 2);
-    for (let index = 0; index < poleLength; index += 1) {
-        const diagonalOffset = Math.floor((index + 1) / 3);
-        const rowY = poleStartY + index;
-        const leftX = x + 6 - diagonalOffset;
-        const rightX = x + 16 + diagonalOffset;
-        ctx.fillStyle = "#000000";
-        ctx.fillRect(leftX, rowY, 1, 1);
-        ctx.fillRect(rightX, rowY, 1, 1);
-    }
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 5, poleStartY, 2, 1);
-    ctx.fillRect(x + 15, poleStartY, 2, 1);
-    const poleTipY = poleStartY + poleLength - 1;
-    const poleTipOffset = Math.floor((poleLength + 1) / 3);
-    const leftPoleTipX = x + 6 - poleTipOffset;
-    const rightPoleTipX = x + 16 + poleTipOffset;
-    ctx.fillStyle = "#f59e0b";
-    ctx.fillRect(leftPoleTipX, poleTipY, 2, 1);
-    ctx.fillRect(rightPoleTipX, poleTipY, 2, 1);
-    for (let index = 0; index < skiSpread.length; index += 1) {
-        const spread = skiSpread[index] ?? 0;
-        const rowY = skiStartY + index;
-        const leftSkiX = x + 7 - spread;
-        const rightSkiX = x + 12 + spread;
-        ctx.fillStyle = "#334155";
-        ctx.fillRect(leftSkiX, rowY, 4, 1);
-        ctx.fillRect(rightSkiX, rowY, 4, 1);
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(leftSkiX + 3, rowY, 1, 1);
-        ctx.fillRect(rightSkiX + 3, rowY, 1, 1);
-        ctx.fillStyle = "#93c5fd";
-        ctx.fillRect(leftSkiX, rowY, 1, 1);
-        ctx.fillRect(rightSkiX, rowY, 1, 1);
-    }
-    const tipSpread = skiSpread[skiSpread.length - 1] ?? 0;
-    const skiTipY = skiStartY + skiSpread.length - 1;
-    ctx.fillStyle = "#e5e7eb";
-    ctx.fillRect(x + 6 - tipSpread, skiTipY, 1, 1);
-    ctx.fillRect(x + 16 + tipSpread, skiTipY, 1, 1);
-}
-function drawNakedSkier(ctx, x, y) {
-    drawSkier(ctx, x, y, "#f2c29b", "#fde68a");
-    ctx.fillStyle = "#d97706";
-    ctx.fillRect(x + 8, y + 21, 6, 2);
-    ctx.fillStyle = "#7c2d12";
-    ctx.fillRect(x + 8, y + 23, 2, 1);
-    ctx.fillRect(x + 12, y + 23, 2, 1);
-}
-function drawDowndraftZone(ctx, x, y, pushDirection) {
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(x + 1, y + 1, 20, 2);
-    ctx.fillStyle = "#475569";
-    ctx.fillRect(x + 10, y + 3, 2, 2);
-    ctx.fillStyle = "#334155";
-    ctx.fillRect(x + 6, y + 5, 11, 6);
-    ctx.fillRect(x + 17, y + 7, 4, 2);
-    ctx.fillStyle = "#94a3b8";
-    ctx.fillRect(x + 13, y + 6, 3, 3);
-    ctx.fillStyle = "#1e293b";
-    ctx.fillRect(x + 21, y + 6, 1, 4);
-    ctx.fillRect(x + 20, y + 7, 3, 1);
-    ctx.fillStyle = "#475569";
-    ctx.fillRect(x + 7, y + 12, 10, 1);
-    ctx.fillRect(x + 8, y + 13, 1, 1);
-    ctx.fillRect(x + 15, y + 13, 1, 1);
+    ctx.fillRect(x + 9, y + 10, 2, 1);
+    ctx.fillRect(x + 14, y + 10, 2, 1);
     const gustBaseX = pushDirection === 1 ? x + 16 : x + 4;
     ctx.fillStyle = "rgba(56, 189, 248, 0.75)";
     ctx.fillRect(gustBaseX, y + 14, 2, 4);
@@ -1721,7 +1726,7 @@ function drawDowndraftZone(ctx, x, y, pushDirection) {
     ctx.fillRect(gustBaseX + 3 * pushDirection, y + 18, 1, 1);
     ctx.fillRect(gustBaseX + 5 * pushDirection, y + 21, 1, 1);
 }
-function drawAndyShadow(ctx, x, y, animationSeed = 0) {
+function drawKomodoShadow(ctx, x, y, animationSeed = 0) {
     const pulse = Math.floor(animationSeed / 8) % 3;
     const width = 14 + pulse;
     const shadowX = x + 11 - Math.floor(width / 2);
@@ -1731,91 +1736,77 @@ function drawAndyShadow(ctx, x, y, animationSeed = 0) {
     ctx.fillStyle = "rgba(15, 23, 42, 0.15)";
     ctx.fillRect(shadowX + 2, shadowY + 2, Math.max(6, width - 4), 1);
 }
-function drawAndy(ctx, x, y, animationSeed = 0) {
+function drawKomodo(ctx, x, y, animationSeed = 0) {
     const trailFrame = Math.floor(animationSeed / 6) % 3;
-    ctx.fillStyle = "#7c2d12";
-    ctx.fillRect(x + 1, y + 17, 22, 2);
-    ctx.fillStyle = "#92400e";
-    ctx.fillRect(x + 1, y + 19, 18, 1);
-    ctx.fillStyle = "#f59e0b";
-    ctx.fillRect(x + 19, y + 16, 4, 4);
-    ctx.fillRect(x + 22, y + 17, 1, 2);
-    ctx.fillStyle = "#111827";
-    ctx.fillRect(x + 8, y + 7, 8, 9);
-    ctx.fillRect(x + 6, y + 12, 12, 4);
-    ctx.fillRect(x + 9, y + 3, 6, 4);
-    ctx.fillRect(x + 7, y + 6, 10, 2);
-    ctx.fillStyle = "#86efac";
-    ctx.fillRect(x + 10, y + 8, 4, 3);
-    ctx.fillStyle = "#ef4444";
-    ctx.fillRect(x + 11, y + 9, 1, 1);
-    ctx.fillRect(x + 13, y + 9, 1, 1);
-    ctx.fillStyle = "#374151";
-    ctx.fillRect(x + 9, y + 5, 6, 1);
-    ctx.fillRect(x + 9, y + 13, 6, 2);
-    // Add air-trail cues to reinforce that Andy is flying above the slope.
+    ctx.fillStyle = "#365314";
+    ctx.fillRect(x + 3, y + 11, 17, 11);
+    ctx.fillRect(x + 18, y + 8, 8, 9);
+    ctx.fillRect(x, y + 15, 7, 5);
+    ctx.fillRect(x - 4, y + 17, 6, 3);
+    ctx.fillStyle = "#65a30d";
+    ctx.fillRect(x + 6, y + 9, 12, 5);
+    ctx.fillRect(x + 20, y + 9, 5, 4);
+    ctx.fillStyle = "#bef264";
+    ctx.fillRect(x + 8, y + 11, 8, 2);
+    ctx.fillRect(x + 21, y + 10, 2, 1);
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(x + 23, y + 9, 1, 1);
+    ctx.fillStyle = "#f87171";
+    ctx.fillRect(x + 25, y + 14, 4, 1);
+    ctx.fillStyle = "#3f6212";
+    ctx.fillRect(x + 5, y + 21, 4, 5);
+    ctx.fillRect(x + 15, y + 21, 4, 5);
     ctx.fillStyle = trailFrame === 0 ? "rgba(125, 211, 252, 0.65)" : "rgba(56, 189, 248, 0.55)";
-    ctx.fillRect(x + 5, y + 21, 2, 3);
-    ctx.fillRect(x + 9, y + 22 + (trailFrame === 1 ? 1 : 0), 2, 3);
-    ctx.fillRect(x + 13, y + 21 + (trailFrame === 2 ? 1 : 0), 2, 3);
+    ctx.fillRect(x + 2, y + 25, 2, 2);
+    ctx.fillRect(x + 10, y + 27 + (trailFrame === 1 ? 1 : 0), 2, 2);
+    ctx.fillRect(x + 20, y + 24 + (trailFrame === 2 ? 1 : 0), 2, 2);
     ctx.fillStyle = "rgba(186, 230, 253, 0.6)";
-    ctx.fillRect(x + 7, y + 25, 8, 1);
+    ctx.fillRect(x + 7, y + 29, 10, 1);
 }
-function drawCrashedSkier(ctx, x, y, bodyColor, helmetColor) {
-    // Crashed pose that still matches the slim skier proportions and palette.
-    ctx.fillStyle = "rgba(15, 23, 42, 0.22)";
-    ctx.fillRect(x + 4, y + 31, 16, 2);
-    ctx.fillStyle = "#334155";
-    ctx.fillRect(x + 2, y + 29, 22, 2);
-    ctx.fillRect(x + 10, y + 20, 2, 13);
-    ctx.fillStyle = "#111827";
-    ctx.fillRect(x + 3, y + 30, 20, 1);
-    ctx.fillRect(x + 11, y + 21, 1, 11);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 5, y + 20, 14, 8);
-    ctx.fillStyle = bodyColor;
-    ctx.fillRect(x + 6, y + 21, 12, 6);
-    ctx.fillStyle = "rgba(15, 23, 42, 0.3)";
-    ctx.fillRect(x + 12, y + 22, 4, 4);
-    ctx.fillStyle = "#0b1220";
-    ctx.fillRect(x + 9, y + 27, 3, 2);
-    ctx.fillRect(x + 15, y + 27, 3, 2);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 1, y + 17, 7, 7);
-    ctx.fillStyle = helmetColor;
-    ctx.fillRect(x + 2, y + 18, 5, 5);
-    ctx.fillStyle = "#0f172a";
-    ctx.fillRect(x + 3, y + 20, 3, 2);
-    ctx.fillStyle = "#cbd5e1";
-    ctx.fillRect(x + 3, y + 19, 2, 1);
-    ctx.fillStyle = "#000000";
-    ctx.fillRect(x + 20, y + 18, 1, 10);
-    ctx.fillStyle = "#f59e0b";
-    ctx.fillRect(x + 19, y + 27, 2, 1);
+function drawStunnedDiver(ctx, x, y) {
+    ctx.fillStyle = "rgba(15, 23, 42, 0.24)";
+    ctx.fillRect(x + 2, y + 30, 22, 2);
+    ctx.fillStyle = "#facc15";
+    ctx.fillRect(x, y + 17, 8, 4);
+    ctx.fillRect(x + 2, y + 24, 8, 4);
+    ctx.fillStyle = "#1e293b";
+    ctx.fillRect(x + 6, y + 17, 7, 3);
+    ctx.fillRect(x + 8, y + 23, 6, 3);
+    ctx.fillStyle = "#f97316";
+    ctx.fillRect(x + 10, y + 16, 10, 10);
+    ctx.fillStyle = "#fde047";
+    ctx.fillRect(x + 18, y + 11, 7, 9);
+    ctx.fillStyle = "#cffafe";
+    ctx.fillRect(x + 20, y + 13, 5, 4);
+    ctx.fillStyle = "#e2e8f0";
+    ctx.fillRect(x + 10, y + 13, 8, 3);
+    ctx.fillStyle = "#67e8f9";
+    ctx.fillRect(x + 25, y + 9, 3, 3);
+    ctx.fillRect(x + 29, y + 5, 2, 2);
 }
-function drawJumpShadow(ctx, x, y, jumpOffset) {
+function drawBoostShadow(ctx, x, y, jumpOffset) {
     const lift = Math.max(0, Math.min(28, jumpOffset));
     const bodyShadowWidth = Math.max(4, Math.round(8 - lift / 6));
     const bodyShadowX = x + 11 - Math.floor(bodyShadowWidth / 2);
     const bodyShadowY = y + 25;
-    const skiShadowWidth = Math.max(2, Math.round(4 - lift / 10));
-    const skiSpread = Math.min(4, Math.floor(lift / 8));
+    const finShadowWidth = Math.max(2, Math.round(4 - lift / 10));
+    const finSpread = Math.min(4, Math.floor(lift / 8));
     const alphaBody = Math.max(0.12, 0.28 - lift * 0.005);
-    const alphaSkis = Math.max(0.08, 0.22 - lift * 0.004);
+    const alphaFins = Math.max(0.08, 0.22 - lift * 0.004);
     ctx.fillStyle = `rgba(15, 23, 42, ${alphaBody.toFixed(2)})`;
     ctx.fillRect(bodyShadowX, bodyShadowY, bodyShadowWidth, 2);
-    ctx.fillStyle = `rgba(15, 23, 42, ${alphaSkis.toFixed(2)})`;
-    ctx.fillRect(x + 7 - skiSpread, bodyShadowY + 2, skiShadowWidth, 1);
-    ctx.fillRect(x + 16 + skiSpread - skiShadowWidth + 1, bodyShadowY + 2, skiShadowWidth, 1);
-    ctx.fillRect(x + 6 - skiSpread, bodyShadowY + 1, 1, 1);
-    ctx.fillRect(x + 17 + skiSpread, bodyShadowY + 1, 1, 1);
+    ctx.fillStyle = `rgba(15, 23, 42, ${alphaFins.toFixed(2)})`;
+    ctx.fillRect(x + 7 - finSpread, bodyShadowY + 2, finShadowWidth, 1);
+    ctx.fillRect(x + 16 + finSpread - finShadowWidth + 1, bodyShadowY + 2, finShadowWidth, 1);
+    ctx.fillRect(x + 6 - finSpread, bodyShadowY + 1, 1, 1);
+    ctx.fillRect(x + 17 + finSpread, bodyShadowY + 1, 1, 1);
 }
-function drawImmortalForceField(ctx, x, y, immortalMs) {
+function drawRescueShield(ctx, x, y, immortalMs) {
     const flashOn = Math.floor(immortalMs / 110) % 2 === 0;
     if (!flashOn) {
         return;
     }
-    // Align to the slim skier sprite bounds (including poles/skis) with even padding.
+    // Align to the slim diver sprite bounds (including tank/fins) with even padding.
     const fieldX = x - 2;
     const fieldY = y + 2;
     const fieldWidth = 28;
@@ -1847,25 +1838,25 @@ function drawImmortalForceField(ctx, x, y, immortalMs) {
         ctx.fillRect(sparkX, sparkY, 2, 2);
     }
 }
-function drawSmashEffect(ctx, effect) {
-    if (effect.kind === "coin-pop") {
+function drawRescueEffect(ctx, effect) {
+    if (effect.kind === "rescue-pop") {
         const progress = 1 - effect.ttlMs / effect.maxTtlMs;
         const shimmer = progress > 0.45 && progress < 0.7;
-        ctx.fillStyle = shimmer ? "#fde68a" : "#facc15";
+        ctx.fillStyle = shimmer ? "#f0fdfa" : "#2dd4bf";
         ctx.fillRect(effect.x + 16, effect.y + 4, 6, 6);
-        ctx.fillStyle = "#ca8a04";
+        ctx.fillStyle = "#ec4899";
         ctx.fillRect(effect.x + 17, effect.y + 5, 4, 4);
         return;
     }
     const progress = 1 - effect.ttlMs / effect.maxTtlMs;
     const radius = Math.floor(progress * 10) + 2;
-    const color = effect.kind === "spaniel-smash" ? "#dc2626" : effect.kind === "poo-splat" ? "#8b5a2b" : "#f97316";
+    const color = effect.kind === "spaniel-rescue" ? "#67e8f9" : effect.kind === "venom-splash" ? "#65a30d" : "#f97316";
     ctx.fillStyle = color;
     ctx.fillRect(effect.x + 8 - radius, effect.y + 8 - radius, radius, radius);
     ctx.fillRect(effect.x + 8 + radius / 2, effect.y + 5, radius, radius);
     ctx.fillRect(effect.x + 4, effect.y + 12 + radius / 2, radius, radius);
-    if (effect.kind === "poo-splat") {
-        ctx.fillStyle = "#5b3715";
+    if (effect.kind === "venom-splash") {
+        ctx.fillStyle = "#365314";
         const centerSize = Math.max(2, Math.floor(radius * 0.6));
         ctx.fillRect(effect.x + 8 - Math.floor(centerSize / 2), effect.y + 8 - Math.floor(centerSize / 2), centerSize, centerSize);
     }

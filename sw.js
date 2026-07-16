@@ -1,19 +1,22 @@
-const CACHE_NAME = "spaniel-smash-v1.2.4";
+/* global self, caches, URL, fetch */
+const CACHE_PREFIX = "swim-spaniel-v";
+const CACHE_NAME = `${CACHE_PREFIX}2.0.1`;
+const appUrl = (path) => new URL(path, self.registration.scope).href;
 const APP_SHELL = [
-  "/",
-  "/index.html",
-  "/site.webmanifest",
-  "/favicon.svg",
-  "/favicon.ico",
-  "/icon-192.png",
-  "/icon-512.png",
-  "/apple-touch-icon.png",
-  "/og-image.png",
-  "/dist/main.js",
-  "/dist/game.js",
-  "/docs/images/obstacles/player.svg",
-  "/docs/images/obstacles/spaniel.svg",
-  "/docs/images/obstacles/andy.svg"
+  appUrl("./"),
+  appUrl("index.html"),
+  appUrl("site.webmanifest"),
+  appUrl("favicon.svg"),
+  appUrl("favicon.ico"),
+  appUrl("icon-192.png"),
+  appUrl("icon-512.png"),
+  appUrl("apple-touch-icon.png"),
+  appUrl("og-image.png"),
+  appUrl("dist/main.js"),
+  appUrl("dist/game.js"),
+  appUrl("docs/images/obstacles/diver.svg"),
+  appUrl("docs/images/obstacles/spaniel.svg"),
+  appUrl("docs/images/obstacles/komodo.svg")
 ];
 
 self.addEventListener("install", (event) => {
@@ -27,7 +30,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
-      const stale = cacheNames.filter((name) => name.startsWith("spaniel-smash-v") && name !== CACHE_NAME);
+      const stale = cacheNames.filter((name) => name.startsWith(CACHE_PREFIX) && name !== CACHE_NAME);
       return Promise.all(stale.map((name) => caches.delete(name)));
     }).then(() => self.clients.claim())
   );
@@ -45,7 +48,7 @@ self.addEventListener("fetch", (event) => {
 
   if (event.request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match("/index.html"))
+      fetch(event.request).catch(() => caches.match(appUrl("index.html")))
     );
     return;
   }
@@ -61,8 +64,12 @@ self.addEventListener("fetch", (event) => {
           return response;
         }
 
-        const shouldCache = requestUrl.pathname.startsWith("/dist/")
-          || requestUrl.pathname.startsWith("/docs/images/")
+        const scopePath = new URL(self.registration.scope).pathname;
+        const relativePath = requestUrl.pathname.startsWith(scopePath)
+          ? requestUrl.pathname.slice(scopePath.length)
+          : requestUrl.pathname;
+        const shouldCache = relativePath.startsWith("dist/")
+          || relativePath.startsWith("docs/images/")
           || requestUrl.pathname.endsWith(".png")
           || requestUrl.pathname.endsWith(".svg")
           || requestUrl.pathname.endsWith(".webmanifest")
